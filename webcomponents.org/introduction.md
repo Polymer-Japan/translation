@@ -87,9 +87,73 @@ Bowerは、コンポーネントの依存関係のインストールも行いま
 
 > For example, the Emoji Rain README describes the install process with Bower:
 
-たとえば、[Emoji Rain のREADME](https://www.webcomponents.org/element/notwaldorf/emoji-rain)では、Bowerを使ったインストール方法を以下の説明されています。
+たとえば、[Emoji Rain のREADME](https://www.webcomponents.org/element/notwaldorf/emoji-rain)では、Bowerを使ったインストール方法を以下のように説明されています。
 
 ```
 mkdir emoji-rain-demo && cd emoji-rain-demo
 bower install emoji-rain
+```
+
+> How do I define a new HTML element?
+## 新しいHTMLエレメントを定義するにはどうすればよいですか？
+
+> This section describes the syntax for the new cross-browser version (v1) of the Web Components specification.
+
+このセクションでは、Webコンポーネントの構文（v1）について説明します。
+
+> Use JavaScript to define a new HTML element and its tag with the customElements global. 
+
+まずは、JavaScriptを使用して、新しいHTMLエレメントとそのタグを、Custom Elementsとして定義します。
+
+> Call customElements.define() with the tag name you want to create and a JavaScript class that extends the base HTMLElement.
+
+`customElements.define()`に、新しく作成するタグの名前と、HTMLElementを拡張した、JavaScriptクラスを指定して呼び出します。
+
+> For example, to define a mobile drawer panel, <app-drawer>:
+
+たとえば、mobile drawer panel（`<app-drawer>`）を定義するには以下のようにします。
+
+```html
+class AppDrawer extends HTMLElement {...}
+window.customElements.define('app-drawer', AppDrawer);
+```
+
+> v0 of the Custom Elements specification used document.registerElement() for this purpose:
+
+Custom Elementsのv0では、`document.registerElement()`を使用しました。
+
+```html
+var XFoo = document.registerElement('x-foo');
+document.body.appendChild(new XFoo());
+```
+
+> See this article on the v0 Custom Elements specification for more information. To use the new tag:
+
+Custom Elements(v0)の詳細については、[この記事](https://www.html5rocks.com/en/tutorials/webcomponents/customelements/)を参照してください。  
+定義したタグを使用するには以下のようにします。
+
+```html
+<app-drawer></app-drawer>
+```
+
+> Using a custom element is no different to using a <div> or any other element. 
+
+Custom Elementsの使い方は、`<div>`など、これまでのHTMLエレメントを使う時と変わりありません。
+
+> Instances can be declared on the page, created dynamically in JavaScript, event listeners can be attached, etc.
+
+その他にも、インスタンスをページ上で宣言したり、JavaScriptで動的に作成したり、イベントリスナーをアタッチすることなどもできます。
+
+```html
+<script>
+
+    // Create with javascript
+    var newDrawer = document.createElement('app-drawer');
+    
+    // Add it to the page
+    document.body.appendChild(newDrawer);
+    
+    // Attach event listeners
+    document.querySelector('app-drawer').addEventListener('open', function() {...});
+</script>
 ```
