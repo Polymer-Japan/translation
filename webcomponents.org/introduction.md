@@ -211,3 +211,31 @@ Shadow DOM v0の詳細については、[この記事](https://www.html5rocks.co
 
 また、Hayato Itoさんの[Shadow DOMのv0とv1の比較](http://hayato.io/2016/shadowdomv1/)も参照してみてください。
 
+
+
+> Libraries for building web components
+
+## Web Componentsを作成するためのライブラリ
+
+> Many libraries already exist that make it easier to build web components. 
+
+Web Componentsを作成するためのライブラリがすでに多くあるため、Web Componentsは簡単に作成することができます。
+
+> To dive in and create your own components, here are some you can try out:
+
+コンポーネントを作成するために、いくつか試してみてください
+
+> Bosonic is a collection of components designed to meet the everyday needs of web developers.
+> Polymer provides a set of features for creating custom elements.
+> SkateJS is a JavaScript library for writing web components with a small footprint.
+> Slim.js is an opensource lightweight web component library that provides data-binding and extended capabilities for components, using es6 native class inheritance.
+> Stencil is an opensource compiler that generates standards-compliant web components. 
+> X-Tag is an open source JavaScript library that provides an interface for component development.
+
+  - [Bosonic](https://bosonic.github.io/)は、Web開発者の要求を満たすように設計されたコンポーネント群です。
+  - [Polymer](https://www.polymer-project.org/)はCustom Elemetsを作成するための機能を提供します。
+  - [SkateJS](https://github.com/skatejs/skatejs)は、Web Componentsを記述するための、小さなJavaScriptライブラリです。
+  - [Slim.js](http://slimjs.com/)は、ES2015のClass構文を使用して、コンポーネントのデータバインディング機能と拡張機能を提供する軽量なWeb Componentsライブラリです。
+  - [Stencil](https://stenciljs.com/)は、標準準拠のWeb Componentsを生成するコンパイラです
+  - [X-Tag](https://x-tag.github.io/)は、コンポーネント開発のためのインターフェイスを提供するオープンソースのJavaScriptライブラリです。
+  
