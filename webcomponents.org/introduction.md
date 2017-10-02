@@ -157,3 +157,57 @@ Custom Elementsの使い方は、`<div>`など、これまでのHTMLエレメン
     document.querySelector('app-drawer').addEventListener('open', function() {...});
 </script>
 ```
+
+> Creating and using a shadow root
+## Shadow Rootの作成と使い方。
+
+> This section describes the syntax for creating shadow DOM with the new cross-browser version (v1) of the shadow DOM specification. 
+
+このセクションでは、Shadow DOM(v1)の作成について説明します。
+
+> Shadow DOM is a new DOM feature that helps you build components. 
+
+Shadow DOMとは、コンポーネントを構築するのに役立つ、DOMの新しい機能です。
+
+> You can think of shadow DOM as a scoped subtree inside your element.
+
+Shadow DOMは、エレメント内のスコープ付きサブツリーと考えることができます。  
+
+
+
+> A shadow root is a document fragment that gets attached to a "host" element. 
+
+Shadow Rootとは、`host`エレメントにアタッチされるドキュメント・フラグメントです。
+
+> The act of attaching a shadow root is how the element gains its shadow DOM. 
+
+Shadow Rootをアタッチする動作は、そのエレメントがShadow DOMを取得する方法です。
+
+> To create shadow DOM for an element, call element.attachShadow():
+
+エレメントのShadow DOMを作成するためには、`element.attachShadow()`を呼びます
+
+```html
+const header = document.createElement('header');
+const shadowRoot = header.attachShadow({mode: 'open'});
+shadowRoot.innerHTML = '<h1>Hello Shadow DOM</h1>'; // Could also use appendChild().
+// header.shadowRoot === shadowRoot
+// shadowRoot.host === header
+```
+
+> Version 0 of the shadow DOM specification provided a slightly different method for creating shadow DOM:
+
+shadow DOMのv0では、shadow DOMを作成する方法が少し異なります。
+
+```html
+var root = host.createShadowRoot();
+```
+
+> See this article on shadow DOM v0 for more information. 
+
+Shadow DOM v0の詳細については、[この記事](https://www.html5rocks.com/en/tutorials/webcomponents/shadowdom/)を参照してください
+
+> See also Hayato Ito's comparison of v0 and v1 of the shadow DOM specification.
+
+また、Hayato Itoさんの[Shadow DOMのv0とv1の比較](http://hayato.io/2016/shadowdomv1/)も参照してみてください。
+
