@@ -49,5 +49,32 @@ bower install --save webcomponents/webcomponentsjs
 })();
 ```
 
+> Shadow DOM polyfill
+
+Shadow DOM ポリフィルについて
+
+> The shadow DOM polyfill provides shadow DOM v0 functionality in browsers that don't support it natively.
+
+Shadow DOM ポリフィルは、Shadow DOMに対応していないブラウザにShadow DOM(v0)の機能を提供します。
+ 
+> See the Compatibility table for more information.
+
+詳細は互換性表を参照してください。
 
 
+
+> The shadow DOM polyfill, though very powerful, is also fairly intrusive and can add significant performance overhead.
+
+Shadow DOM ポリフィルは非常に強力ですが、パフォーマンスオーバーヘッドを招くおそれがあります。
+
+> For this reason, many Web Components-based libraries like Polymer work around having to use this polyfill, and provide a lighter-weight alternative.
+
+このため、Polymerなど、Webコンポーネントベースのライブラリでは、このポリフィルは使わずに軽量の代替品を使用します
+ 
+> These libraries don’t require loading the full Web Components polyfill, but instead use a “lite” version of the polyfill with shadow DOM removed:
+
+これらのライブラリは、完全なWeb Components ポリフィルは使わずに、Shadow DOMを削除した「ライト」バージョンのポリフィルを使用します。
+
+```
+webcomponents/webcomponents-lite.min.js
+```
