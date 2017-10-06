@@ -139,3 +139,25 @@ assert(div.firstChild instanceof HTMLElement);
 
 `instanceof`は、グローバルなHTMLElementコンストラクタをカスタムコンストラクタに置き換えたので、動作します。
 
+
+
+> More Logical DOM
+
+#### 論理DOMについて
+
+> The `wrappers.Node` object keeps track of the logical (light as well as shadow, but not composed) DOM. 
+
+`wrappers.Node`オブジェクトは、論理DOMを追跡します（ライトとシャドウですが、合成されていない）
+
+> Internally it has has the 5 fundamental Node pointers: parentNode, firstChild, lastChild, nextSibling and previousSibling.
+
+内部的には、`parentNode`、`firstChild`、`lastChild`、`nextSibling`、`previousSibling`、の5つのNode pointerがあります。
+ 
+> When the DOM tree is manipulated, these pointers are updated to always represent the logical tree. 
+
+DOMツリーが操作されると、これらのポインタは常に論理ツリーを表すために更新されます。
+
+> When the shadow DOM renderer needs to render the visual tree, these internal pointers are updated as needed.
+
+Shadow DOMレンダラがビジュアルツリーをレンダリングする必要がある場合、これらの内部ポインタは必要に応じて更新されます。
+
