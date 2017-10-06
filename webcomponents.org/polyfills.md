@@ -51,7 +51,7 @@ bower install --save webcomponents/webcomponentsjs
 
 > Shadow DOM polyfill
 
-Shadow DOM ポリフィルについて
+### Shadow DOM ポリフィルについて
 
 > The shadow DOM polyfill provides shadow DOM v0 functionality in browsers that don't support it natively.
 
@@ -78,3 +78,64 @@ Shadow DOM ポリフィルは非常に強力ですが、パフォーマンスオ
 ```
 webcomponents/webcomponents-lite.min.js
 ```
+
+> Wrappers
+
+#### Wrappers
+
+> The polyfill is implemented using wrappers.
+
+ポリフィルはwrappersを使用して実行されています。
+ 
+> A wrapper wraps the native DOM node in a wrapper node. 
+
+wrapperはネイティブDOMノードをラッパー・ノードでラップします。
+
+> The wrapper node looks and behaves identically to the native node (minus bugs and known limitations).
+
+ラッパー・ノードは、ネイティブ・ノードのように振る舞います（バグと既知の制限はありません）。
+ 
+> For example:
+
+例：
+
+```javascript
+var div = document.createElement('div');
+div.innerHTML = '<b>Hello world</b>';
+assert(div.firstChild instanceof HTMLElement);
+```
+
+> But div is actually a wrapper of the element that the browser normally gives you.
+
+実際は`div`は通常のエレメントのラッパーになります。
+ 
+> This wrapper just happens to have the same interface as the browser provided element.
+
+このラッパーは、ブラウザーで提供されるエレメントと同じインターフェースを持ちます。
+
+
+
+
+> It has an innerHTML setter that works just like the native innerHTML but instead of working on the composed tree it works on the local DOM. 
+
+これには`innerHTML`セッターがあります。これはネイティブ`innerHTML`のように機能しますが、作成されたツリーで動作するのではなく、ローカルDOM上で動作します。
+
+> When you change the logical DOM tree like this it might cause the composed tree to need to be re-rendered. 
+
+このように論理DOMツリーを変更すると、作成されたツリーを再レンダリングする必要が生じる可能性があります。
+
+> This does not happen immediately, but it is scheduled to happen later as needed.
+
+これはすぐには起こらないが、必要に応じて後で起こる予定である。
+
+
+
+
+> The wrapper node also has a firstChild getter which once again works on the logical DOM. 
+
+ラッパー・ノードには`firstChild`ゲッターもあり、これは論理DOMで再び動作します。
+
+> instanceof still works because we have replaced the global HTMLElementconstructor with our custom one.
+
+`instanceof`は、グローバルなHTMLElementコンストラクタをカスタムコンストラクタに置き換えたので、動作します。
+
