@@ -161,3 +161,28 @@ DOMツリーが操作されると、これらのポインタは常に論理ツ�
 
 Shadow DOMレンダラがビジュアルツリーをレンダリングする必要がある場合、これらの内部ポインタは必要に応じて更新されます。
 
+
+
+> Wrap all the objects!
+
+#### すべてのオブジェクトをラップする
+
+> The intent is to wrap all the DOM objects that interact with the DOM tree. 
+
+DOMツリーと対話するすべてのDOMオブジェクトをラップすることです。
+
+> For this polyfill to be completely transparent we need to wrap a lot of APIs.
+
+このpolyfillを完全に透明にするには、多くのAPIをラップする必要があります。
+ 
+> Any method, accessor or constructor that takes or returns a Node or an object that indirectly touches a node needs to be wrapped.
+
+Nodeまたは、Nodeに間接的に接触するオブジェクトを受け取るか、返すメソッド、アクセサ、または、コンストラクタは、すべてラップする必要があります。
+ 
+> As you can imagine there are a lot of these. 
+
+このように、たくさんあります。
+
+> At the moment we have done the most common ones but there are sure to be missing ones as soon as you try to use this with your code.
+
+現時点では、最も一般的なコードを実行しましたが、コードでこれを使用しようとするとすぐに行方不明になることがあります。
