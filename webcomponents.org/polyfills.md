@@ -186,3 +186,51 @@ Nodeまたは、Nodeに間接的に接触するオブジェクトを受け取る
 > At the moment we have done the most common ones but there are sure to be missing ones as soon as you try to use this with your code.
 
 現時点では、最も一般的なコードを実行しましたが、コードでこれを使用しようとするとすぐに行方不明になることがあります。
+
+
+
+
+> Wrap and Unwrap
+
+#### Wrapと、Unwrap
+
+> There are bound to be cases where we haven't done the wrapping for you. 
+
+wrappingをしていない場合があります。
+
+> In those cases you can use wrap to create a wrapper of a native object, or unwrap to get the underlying native object from a wrapper.
+
+そのような場合は、ネイティブオブジェクトのwrapperを作成するためにwrapを使ったり、wrapperから基本的なネイティブオブジェクト取得するためにunwrapします
+
+> These two functions are available on the ShadowDOMPolyfill object.
+
+これらの2つの関数は、ShadowDOMPolyfillオブジェクトで使用できます。
+ 
+> For example:
+
+例
+
+```javascript
+wrap(document.body)
+// or get body of the wrapped document
+wrap(document).body
+
+unwrap(div).firstChild instanceof HTMLElement
+```
+
+> If you plan to work with elements that need to be wrapped over and over, try passing a wrapped version of the element into an immediately-invoked function expression.
+
+何度も繰り返す必要があるエレメントの場合は、エレメントのラップされたバージョンを、呼び出される関数に渡してみてください。
+
+```javascript
+(function(document) {
+  // Now a library like jQuery can add
+  // listeners to the wrapped document
+  $(document).on('click', function(e) {
+    console.log('Clicked on', e.target);
+  });
+})(wrap(document));
+```
+
+
+
