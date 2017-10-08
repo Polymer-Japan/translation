@@ -233,4 +233,44 @@ unwrap(div).firstChild instanceof HTMLElement
 ```
 
 
+> Event Retargeting
+
+#### イベントのリターゲット
+
+> An important aspect of the shadow DOM is that events are retargeted to never expose the shadow DOM to the light DOM.
+
+Shadow DOMの重要な側面は、Shadow DOMをLightDOMに公開しないようにイベントをリターゲットすることです。
+ 
+> For example:
+
+例
+
+```javascript
+var div = document.createElement('div');
+div.innerHTML = 'Click me';
+var shadow = div.createShadowRoot();
+shadow.innerHTML = '<b><content></content></b>';
+```
+
+> If the user clicks on the div the real target of the click event is the <b> element. 
+
+ユーザーが`div`をクリックすると、クリックイベントのターゲットは`<b>`エレメントになります。
+
+> But that element is not visible in the light DOM so the target is therefore retargeted to the div element itself.
+
+しかし、そのエレメントは`Light DOM`では表示されないので、ターゲットは`div`エレメント自体にリターゲットされます。
+ 
+> However, if there is an event listener on the <content>, <b> or the shadow root, the target should be visible to the event listener.
+
+ただし、`<content>`、`<b>`またはshadow rootにイベントリスナーがある場合、ターゲットはイベントリスナーに表示される必要があります。
+
+
+
+> Similar issues occur with relatedTarget in mouseover and mouseoutevents.
+  
+`mouseover`や`mo​​useoutevents`の`relatedTarget`でも同様の問題が発生します。
+
+> To support this kind of behavior the event dispatching in the browser has to be reimplemented by the polyfill.
+
+この種類の動作をサポートするには、ブラウザでイベントをディスパッチするには、ポリフィルによって再実装する必要があります。
 
