@@ -274,3 +274,27 @@ shadow.innerHTML = '<b><content></content></b>';
 
 この種類の動作をサポートするには、ブラウザでイベントをディスパッチするには、ポリフィルによって再実装する必要があります。
 
+
+
+> Known limitations
+
+#### 既知の制限事項
+
+> CSS encapsulation is limited.
+> Object.prototype.toString does not return the same string as for native objects.
+> No live NodeLists. All node lists are snapshotted upon read.
+> document, window, document.body, document.head and others are non configurable and cannot be overridden. 
+We are trying to make these work as seamlessly as possible but there will doubtlessly be cases where there will be problems; 
+for those cases you can use wrapand unwrap to get unblocked.
+> Cross window/frame access is not implemented.
+> CSS :host() rules can only have (at most) one level of nested parentheses in their argument selectors. For example, :host(.zot) and :host(.zot:not(.bar)) both work, but :host(.zot:not(.bar:nth-child(2))) does not.
+
+- CSSのカプセル化には制限があります
+- `Object.prototype.toString`は、ネイティブオブジェクトと同じ文字列を返すことが出来ません。
+- ライブノードリストはありません。すべてのノードリストは、読み込み時にスナップショットされます。
+- `document`、`window`、`document.body`、`document.head`などは設定できないため、上書きすることはできません。これらの作業を可能な限りシームレスに行うよう努めていますが、問題が生じるケースは間違いありません。そのような場合は、`wrap`と`unwrapを使用してブロックを解除することができます。
+- クロス ウィンドウ/フレーム アクセスは実装されていません。
+- CSS`:host()`ルールは引数セレクタにネストされたカッコを1レベルしか持てません。たとえば`:host(.zot)`と`:host(.zot:not(.bar))`はどちらも動作しますが、`:host(.zot:not(.bar:nth-​​child(2)))`は動作しません。
+
+
+
