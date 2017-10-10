@@ -51,7 +51,7 @@ bower install --save webcomponents/webcomponentsjs
 
 > Shadow DOM polyfill
 
-### Shadow DOM ポリフィルについて
+## Shadow DOM ポリフィルについて
 
 > The shadow DOM polyfill provides shadow DOM v0 functionality in browsers that don't support it natively.
 
@@ -295,6 +295,98 @@ for those cases you can use wrapand unwrap to get unblocked.
 - `document`、`window`、`document.body`、`document.head`などは設定できないため、上書きすることはできません。これらの作業を可能な限りシームレスに行うよう努めていますが、問題が生じるケースは間違いありません。そのような場合は、`wrap`と`unwrapを使用してブロックを解除することができます。
 - クロス ウィンドウ/フレーム アクセスは実装されていません。
 - CSS`:host()`ルールは引数セレクタにネストされたカッコを1レベルしか持てません。たとえば`:host(.zot)`と`:host(.zot:not(.bar))`はどちらも動作しますが、`:host(.zot:not(.bar:nth-​​child(2)))`は動作しません。
+
+
+
+> Custom Elements polyfill
+
+## カスタムエレメント ポリフィル
+
+> The Custom Elements polyfill provides support for v0 of the Custom Elements spec. 
+> A polyfill for v1 is in progress at https://github.com/webcomponents/custom-elements.
+
+カスタムエレメント ポリフィルは、カスタムエレメント仕様のv0をサポートします。
+v1のポリフィルは進行中です。[https://github.com/webcomponents/custom-elements](https://github.com/webcomponents/custom-elements)
+
+> Custom elements polyfill handles element upgrades asynchronously. 
+
+カスタムエレメント ポリフィルは、エレメントのアップグレードを非同期に処理します。
+
+> The polyfill defers upgrading elements until DOMContentsLoaded time. 
+
+ポリフィルは、`DOMContentsLoaded` 時間まで要素をアップグレードします。
+
+> It does this as a performance optimization.
+
+パフォーマンスの最適化としてこれを行います。
+ 
+> Subsequent to the initial upgrade pass, Mutation Observers are used to discover new elements.
+  
+初期アップグレードに続いて、Mutation Observersを使用して新しいエレメントを発見します。
+
+> To know when the polyfill has finished all of its start up tasks, listen to the WebComponentsReady event on document or window.
+
+ポリフィルの起動タスクがすべてを完了したのを知るには、`document`または`window`の`WebComponentsReady`イベントを待ち受けます。
+ 
+> For example:
+
+例
+
+```html
+<script>
+  // hide body to prevent FOUC
+  document.body.style.opacity = 0;
+  window.addEventListener('WebComponentsReady', function() {
+    // show body now that everything is ready
+    document.body.style.opacity = 1;
+  });
+</script>
+```
+
+> The Custom Elements specification is still under discussion.
+
+カスタムエレメントの仕様はまだ議論中です。
+ 
+> The polyfill implements certain features in advance of the specification.
+
+ポリフィルは、仕様に先立って特定の機能を実装します。
+ 
+> In particular, the lifecycle callback methods that get called if implemented on the element prototype:
+
+特に、エレメントプロトタイプに実装されている場合に呼び出される、ライフサイクルコールバック・メソッドは実装されます
+
+> createdCallback() is called when a custom element is created.
+> attachedCallback() is called when a custom element is inserted into a DOM subtree.
+> detachedCallback() is called when a custom element is removed from a DOM subtree.
+> attributeChangedCallback(attributeName) is called when a custom element's attribute value has changed
+
+- `createdCallback()`は、カスタムエレメントが作成されると呼び出されます。
+- `attachmentCallback()`は、カスタムエレメントがDOMサブツリーに挿入されたときに呼び出されます。
+- `detachedCallback()`は、カスタムエレメントがDOMサブツリーから削除されたときに呼び出されます。
+- `attributeChangedCallback(attributeName)`は、カスタムエレメントの属性値が変更されたときに呼び出されます。
+
+
+> createdCallback is invoked synchronously with element instantiation, the other callbacks are called asynchronously.
+
+`createdCallback`はエレメントのインスタンス化と同期して呼び出され、他のコールバックは非同期に呼び出されます
+ 
+> The asynchronous callbacks generally use the MutationObserver timing model,
+
+非同期コールバックは、通常、`MutationObserver`タイミングモデルを使用します。
+ 
+> which means they are called before layouts, paints, or other triggered events,
+
+それは、レイアウト、ペイント、その他のトリガイベントの前に呼び出されることを意味します
+ 
+> so the developer need not worry about flashing content or other bad things happening before the callback has a chance to react to changes.
+
+ということから、開発者は、コールバックの変更前に起こるコンテンツのフラッシュやその他の悪い出来事について気にする必要はありません。
+
+
+
+
+
+
 
 
 
