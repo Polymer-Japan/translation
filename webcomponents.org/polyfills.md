@@ -383,10 +383,42 @@ v1のポリフィルは進行中です。[https://github.com/webcomponents/custo
 ということから、開発者は、コールバックの変更前に起こるコンテンツのフラッシュやその他の悪い出来事について気にする必要はありません。
 
 
+> HTML Imports Polyfill
 
+## HTMLインポート ポリフィル
 
+> In imported documents, href and src attributes in HTML, and urlproperties in CSS files, are relative to the location of the imported document, not the main document.
 
+インポートされたドキュメントでは、HTMLの`href`と`src`属性、CSSファイルの`urlproperties`は、インポートされたドキュメントの相対位置になります。
 
+> The HTML Imports polyfill begins processing link tags when the DOMContentLoaded event fires.
 
+HTMLインポートポリフィルは、DOMContentLoadedイベントが発生したときにlinkタグの処理を開始します。
+ 
+> To know when loading is complete, listen for the HTMLImportsLoaded event on document or window.
 
+読み込みが完了したかは、documentまたはwindowのHTMLImportsLoadedイベントで検知できます。
+ 
+> For example:
 
+例:
+
+```html
+<script>
+window.addEventListener('HTMLImportsLoaded', function(e) {
+  // all imports loaded
+});
+</script>
+```
+
+> The polyfill loads linked stylesheets, external scripts, and nested HTML imports, but does not parse any data in the loaded resources.
+
+ポリフィルでは、リンクされたスタイルシート、外部スクリプト、およびネストされたHTMLインポートはロードしますが、リソースのデータは解析しません。
+ 
+> For parsing imports, combine HTML Imports with Custom Elements.
+
+インポートを解析するには、HTMLインポートとカスタムエレメントを組み合わせます。
+ 
+> As long as the HTML Imports is loaded first, the Custom Elements polyfill will detect it, and process all imports when HTMLImportsLoaded event fires.
+
+HTMLインポートが最初にロードされると、カスタムエレメントポリフィルはそれを検出し、`HTMLImportsLoaded`イベントが発生した時にすべてのインポートを処理します。
