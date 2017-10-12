@@ -252,7 +252,7 @@ var shadow = div.createShadowRoot();
 shadow.innerHTML = '<b><content></content></b>';
 ```
 
-> If the user clicks on the div the real target of the click event is the <b> element. 
+> If the user clicks on the div the real target of the click event is the `<b>` element. 
 
 ユーザーが`div`をクリックすると、クリックイベントのターゲットは`<b>`エレメントになります。
 
