@@ -260,7 +260,7 @@ shadow.innerHTML = '<b><content></content></b>';
 
 しかし、そのエレメントは`Light DOM`では表示されないので、ターゲットは`div`エレメント自体にリターゲットされます。
  
-> However, if there is an event listener on the <content>, <b> or the shadow root, the target should be visible to the event listener.
+> However, if there is an event listener on the `<content>`, `<b>` or the shadow root, the target should be visible to the event listener.
 
 ただし、`<content>`、`<b>`またはshadow rootにイベントリスナーがある場合、ターゲットはイベントリスナーに表示される必要があります。
 
@@ -429,7 +429,7 @@ HTMLインポートが最初にロードされると、カスタムエレメン�
 
 ## WebComponentsReady イベント
 
-> Under native imports, <script> tags in the main document block the loading of imports. 
+> Under native imports, `<script>` tags in the main document block the loading of imports. 
 
 ネイティブのimportsでは、メインドキュメントの`<script>`タグがimportsの読み込みをブロックします。
 
