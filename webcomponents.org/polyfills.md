@@ -422,3 +422,43 @@ window.addEventListener('HTMLImportsLoaded', function(e) {
 > As long as the HTML Imports is loaded first, the Custom Elements polyfill will detect it, and process all imports when HTMLImportsLoaded event fires.
 
 HTMLインポートが最初にロードされると、カスタムエレメントポリフィルはそれを検出し、`HTMLImportsLoaded`イベントが発生した時にすべてのインポートを処理します。
+
+
+
+> The WebComponentsReady event
+
+## WebComponentsReady イベント
+
+> Under native imports, <script> tags in the main document block the loading of imports. 
+
+ネイティブのimportsでは、メインドキュメントの`<script>`タグがimportsの読み込みをブロックします。
+
+> This is to ensure the imports have loaded and any registered elements in them have been upgraded.
+
+これは、importsがロードされ、その中の登録されたエレメントがアップグレードされたことを保証するためです。
+
+
+> This native behavior is difficult to polyfill so the HTML Imports polyfill doesn't try.
+
+このネイティブの動作をポリフィルするのが難しいため、HTML imports ポリフィルでは対応していません。
+ 
+> Instead the WebComponentsReady event is a stand in for this behavior:
+
+その代わりに、`WebComponentsReady`イベントで、この動作をサポートしています
+
+````html
+<script>
+  window.addEventListener('WebComponentsReady', function(e) {
+    // imports are loaded and elements have been registered
+  });
+</script>
+````
+
+> In native HTML Imports, document.currentScript.ownerDocument references the import document itself. 
+
+ネイティブのHTMLインポートでは、`document.currentScript.ownerDocument`はインポートドキュメント自体を参照します。
+
+> In the polyfill, use document._currentScript.ownerDocument (note the underscore).
+
+ポリフィルでは、`document._currentScript.ownerDocument`を使用します（アンダースコアに注意してください）。
+
