@@ -80,3 +80,54 @@ npm install -g polymer-cli
 > You're all set. Run polymer help to view a list of commands.
 
 インストールは以上です。`polymer help`を実行して、コマンドのリストを表示してみましょう。
+
+
+> CLI project types
+
+## CLI project types
+
+> Polymer CLI works with two types of projects:
+
+Polymer CLIは2種類のプロジェクトで動作します。
+
+
+> Elements projects. 
+
+エレメントプロジェクト
+
+> In an element project, you expose a single element or group of related elements which you intend to use in other element or app projects, or distribute on a registry like Bower or NPM.
+
+エレメントプロジェクト, 他のエレメントプロジェクトやアプリプロジェクトで使用する単一エレメントまたは関連エレメントのグループを公開するか、BowerやNPMなどに配布します。
+ 
+> Elements are reusable and organized to be used alongside other elements, so components are referenced outside the project.
+
+エレメントは他のエレメントとともに使用するために再利用可能で構成されているため、コンポーネントはプロジェクトの外部で参照されます。
+
+
+
+> See the guide to creating an element project with the Polymer CLI for more information.
+
+詳細については、[Polymer CLIを使用したエレメントプロジェクトの作成](https://www.polymer-project.org/2.0/docs/tools/create-element-polymer-cli)に関するガイドを参照してください。
+
+
+
+> Application projects. 
+
+アプリケーションプロジェクト
+
+> In an app project, you build an application, composed of Polymer elements, which you intend to deploy as a website.
+
+アプリケーションプロジェクトでは、Polymerで構成されたアプリケーションを作成できます。このアプリケーションはWebサイトとして展開します。
+ 
+> Applications are self-contained, organized with components inside the application.
+
+アプリケーションは自己完結型で、アプリケーション内のコンポーネントで構成されています。
+
+
+
+> See the guide to creating an application project with the Polymer CLI for more information.
+  
+詳細については、[Polymer CLIを使用してアプリケーションプロジェクトを作成する](https://www.polymer-project.org/2.0/docs/tools/create-app-polymer-cli)ためのガイドを参照してください。
+
+
+
