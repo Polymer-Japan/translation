@@ -130,4 +130,27 @@ Polymer CLIは2種類のプロジェクトで動作します。
 詳細については、[Polymer CLIを使用してアプリケーションプロジェクトを作成する](https://www.polymer-project.org/2.0/docs/tools/create-app-polymer-cli)ためのガイドを参照してください。
 
 
+## Commands
 
+> See the documentation on Polymer CLI commands for a list of commands and how to use them.
+
+コマンドとそれらの使用方法については、[Polymer CLI commands](https://www.polymer-project.org/2.0/docs/tools/polymer-cli-commands)を参照してください。
+
+
+> Installing Polymer CLI pre-requisites on Windows 10
+
+## Windows 10にPolymer CLIをインストールする前提条件
+
+> There are multiple ways to install the pre-requisites for the Polymer CLI on a Windows 10 system.
+
+Windows 10システムでPolymer CLIの前提条件をインストールするには、複数の方法があります。
+ 
+> This method uses Bash on the Windows Subsystem for Linux.
+
+ここでは、WindowsサブシステムのBashを使用します。
+
+
+
+> For complete and up-to-date installation instructions for Bash on the Windows Subsystem for Linux, we recommend you review the Bash on ubuntu on Windows documentation.
+  
+Bashの最新のインストール手順については、[WindowsのUbuntuに関するドキュメント](https://msdn.microsoft.com/en-us/commandline/wsl/about)を参照してください。
