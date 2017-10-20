@@ -154,3 +154,45 @@ Windows 10システムでPolymer CLIの前提条件をインストールする�
 > For complete and up-to-date installation instructions for Bash on the Windows Subsystem for Linux, we recommend you review the Bash on ubuntu on Windows documentation.
   
 Bashの最新のインストール手順については、[WindowsのUbuntuに関するドキュメント](https://msdn.microsoft.com/en-us/commandline/wsl/about)を参照してください。
+
+> Enable Bash on Windows 10
+
+### Windows 10で`Bash`を有効にする
+
+> Check your OS build by selecting Start > System > OS Build.
+> Make sure you have an x64 installation of Windows 10 with OS build > 14393.
+
+> Open Settings > Update and Security > For developers and select Developer Mode.
+
+> From the Start Menu, search for Turn Windows features on or off and select Windows Subsystem for Linux (beta).
+
+> Restart your computer.
+
+> Log in as Administrator.
+
+> From a PowerShell prompt, run the following command:
+
+> Open a Bash prompt:
+
+> Follow the prompts to create a new user.
+
+1. `Start > System > OS Build`の順に選択してOSの情報を確認する
+1. `Settings > Update and Security > For developers`を開き、`Developer Mode`を選択します
+1. Startメニューから、`Windows features on or off`を探して、`Windows Subsystem for Linux (beta)`を選択します。
+1. コンピューターを再起動します
+1. `Administrator`でログインします
+1. PowerShellプロンプトから、下記のコマンドを実行します
+```
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux
+```
+7. Bashプロンプトを開きます
+```
+bash
+```
+8. プロンプトに従って新しいユーザーを作成します。
+
+> Your Bash installation is complete. 
+> You can start now start a new Bash prompt by typing bash from the Start menu.
+
+これでBashのインストールは完了です。
+Startメニューからbashと入力すると、新しいBashプロンプトを起動することができます。
