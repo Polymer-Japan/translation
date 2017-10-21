@@ -196,3 +196,50 @@ bash
 
 これでBashのインストールは完了です。
 Startメニューからbashと入力すると、新しいBashプロンプトを起動することができます。
+
+
+
+> Install Node with nvm
+
+### nvmでNodeをインストールする
+
+> For complete and up-to-date instructions, refer to the official documentation for installing Node with nvm.
+
+最新の手順については、[nvmの公式ドキュメント](https://github.com/creationix/nvm)を参照してください。
+
+> Type the following command to use an install script:
+
+1. 次のコマンドを入力して、インストールスクリプトを使用します。
+
+```
+curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+```  
+
+> Restart your terminal by closing and re-opening your Bash prompt.
+
+2. ターミナルを再起動してください。
+
+> Install the latest version of Node:
+
+3. Nodeの最新バージョンをインストールします。
+
+```
+nvm install node
+```
+
+
+> Optional: Set a default browser
+
+### オプション：デフォルトブラウザ開く
+
+> Optionally, set a default browser so polymer serve --open has something to open. Use your own Path variable.
+
+オプションで、`polymer serve --open`よりデフォルトブラウザで開くように設定します。Path変数を使用します。
+
+```
+echo $'\n'export BROWSER=/mnt/c/Program\\\ Files\\\ \\\(x86\\\)/Google/Chrome/Application/chrome.exe >> ~/.bashrc
+```
+
+
+
+  
