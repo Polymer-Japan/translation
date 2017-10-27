@@ -73,4 +73,30 @@ Polymer CLIのビルドプロセスは、PRPLパターンに沿ってアプリ�
 共通の設定をカバーするプリセットが用意されています。以下のビルドプリセットのセクションを参照してください。
 
 
+#### --add-service-worker
+
+> Generate a service worker for your application to cache all files and assets on the client.
+
+アプリケーションのすべてのファイルをキャッシュするサービスワーカーを生成します。
+
+> Polymer CLI will generate a service worker for your build using the sw-precache library.
+
+Polymer CLIは、[sw-precache](https://github.com/GoogleChrome/sw-precache)ライブラリを使用してビルド用のサービスワーカーを生成します。
+
+> To customize your service worker, create a `sw-precache-config.js` file in your project directory that exports your configuration. 
+
+サービスワーカーに変更を加えるには、プロジェクトディレクトリにsw-precache-config.jsファイルを作成します。
+
+> See the sw-precache README for a list of all supported options.
+
+サポートされているオプションについては、sw-precacheの[README](https://github.com/GoogleChrome/sw-precache)を参照してください。
+
+
+> Note that the sw-precache library uses a cache-first strategy for maximum speed and makes some other assumptions about how your service worker should behave. 
+
+sw-precacheライブラリは、高速化のために[cache-first](http://jakearchibald.com/2014/offline-cookbook/#cache-falling-back-to-network)を使用します。サービスワーカーに他の用途を持たせる場合に注意してください。
+
+> Read the "Considerations" section of the sw-precache README to make sure that this is suitable for your application.
+
+このオプションがアプリケーションに適していることを確認するには、sw-precache READMEの [Considerationsセクション](https://github.com/GoogleChrome/sw-precache#considerations)を読んでください。
 
