@@ -100,3 +100,21 @@ sw-precacheライブラリは、高速化のために[cache-first](http://jakear
 
 このオプションがアプリケーションに適していることを確認するには、sw-precache READMEの [Considerationsセクション](https://github.com/GoogleChrome/sw-precache#considerations)を読んでください。
 
+
+#### --bundle
+
+> By default, fragments are unbundled.
+
+デフォルトでは、フラグメントはバンドルされていません。
+ 
+> This is optimal for HTTP/2-compatible servers and clients.
+
+これは、HTTP/2互換のサーバーとクライアントに最適です。
+
+> If the --bundle flag is supplied, all fragments are bundled together to reduce the number of file requests. 
+
+--bundleフラグを指定すると、すべてのフラグメントがバンドルされ、ファイルリクエストの数が削減されます。
+
+> This is optimal for sending to clients or serving from servers that are not HTTP/2 compatible.
+
+これは、クライアントへの送信やHTTP/2と互換性のないサーバーからの配信に最適です。
