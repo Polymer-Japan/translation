@@ -5,22 +5,21 @@ subtitle: "Build an app with App Toolbox"
 
 <!-- toc -->
 
-The `starter-kit` includes placeholder pages you can use to start building out
-the views of your application. But at some point, you'll probably want to add more.
+`starter-kit` には、アプリケーションのビューを構築するためのプレースホルダーページが含まれています。
+しかし、ある時点で、おそらくより多くのページを追加したくなるでしょう。
 
-This step takes you through the process of adding a new page or top-level view to your application.
+この手順では、アプリケーションに新しいページすなわちトップレベルビューを追加するプロセスを順を追って説明していきます。
 
-## Create an element for the new page
+## 新しいページ用の要素を作成
 
-First, create a new custom element that encapsulates the contents of
-your new view.
+まず、新たなビューの内容をカプセル化する新しいカスタム要素を作成します。
 
-1.  Create a new file called `src/my-new-view.html` and open it in an editor.
+1.  `src/my-new-view.html` という名前の新しいファイルを作成し、エディタで開きます。
 
-2.  Add some scaffolding for a new custom element definition using Polymer:
+2.  足場（scaffolding）となるコードを追加します。これらは、Polymerを用いた新しいカスタム要素定義のための足場となります：
 
     ```html
-    <!-- Load the Polymer.Element base class -->
+    <!-- Polymer.Element 基底クラスをロード -->
     <link rel="import" href="../bower_components/polymer/polymer-element.html">
 
     <dom-module id="my-new-view">
@@ -47,17 +46,17 @@ your new view.
     </dom-module>
     ```
 
-For now your element is very basic, and just has a `<h1>` that says "New view",
-but we can return to it and make it more interesting later.
+現時点では、要素はただ「New view」と記載のある`<h1>`があるだけのベーシックな状態ですが、
+後で、もっと興味深いものにすることができます。
 
-## Add the element to your app
+## アプリケーションへの要素の追加
 
-Your element is defined, but your app isn't actually using it yet. To use it,
-you need to add it to your app's HTML.
+カスタム要素は定義されましたが、まだアプリケーションによって使用されていません。
+要素を使用するためには、アプリケーション側のHTMLに追加する必要がります。
 
-1.  Open `src/my-app.html` in a text editor.
+1.  テキストエディタで `src/my-app.html` を開きます。
 
-1.  Find the set of existing pages inside the `<iron-pages>`:
+1.  `<iron-pages>` 要素内に既存ページ一式を見つける事ができます:
 
     ```
     <iron-pages
@@ -72,16 +71,15 @@ you need to add it to your app's HTML.
     </iron-pages>
     ```
 
-    The `<iron-pages>` is bound to the `page` variable that changes with the
-    route, and selects the active page while hiding the others.
+    `<iron-pages>` は、ルートと共に変化する` ページ` 変数にバインドされ、他のページを隠しながらアクティブなページを選択します。
 
-1.  Add your new page inside the iron-pages:
+1.  iron-pages タグ内に新しいページ要素を追加します:
 
     ```
     <my-new-view name="new-view"></my-new-view>
     ```
 
-    Your `<iron-pages>` should now look like this:
+    `<iron-pages>` は次のようになります:
 
     ```
     <iron-pages
@@ -97,19 +95,13 @@ you need to add it to your app's HTML.
     </iron-pages>
     ```
 
-    Note: Normally when adding a new custom element for the first time, you'd
-    want to add an HTML import to ensure the component definition has been
-    loaded.  However, this app template is already set up to lazy-load top
-    level views on-demand based on the route, so in this case you don't need
-    to add an import for your new `<my-new-view>` element.
+    注：通常、新しいカスタム要素を追加する際は、コンポーネント定義の読み込みのため、HTML Import（訳者注：<link rel = "import">）を追加したくなるかもしれません。しかしながら、本アプリケーションテンプレートは、ルートに基いたトップレベルのビューを、必要に応じて遅延ロードするように予めセットアップされています。よって、今回のケースでは、新しい `<my-new-view>` 要素を使用するために、HTML Importを追加する必要はありません。
+    
+    アプリケーションテンプレートに付随する次のコードによって、ルートが変更された際に、各ページ定義が読みこまれていることが保証されます。
+    ご覧のように、各ルートの定義をインポートする際、アプリケーションは単純な規約 (`'my-' + page + '.html'`) に従います。
+    さらに複雑なルーティングと遅延ロードを処理するために、このコードを好きなように作り変えることができます。
 
-    The following code that came with the app template will ensure the
-    definition for each page has been loaded when the route changes.  As
-    you can see, the app follows a simple convention (`'my-' + page + '.html'`)
-    when importing the definition for each route. You can adapt this code as you
-    like to handle more complex routing and lazy loading.
-
-    Existing template code—you do not need to add this { .caption }
+    既存のテンプレートコード ー これを追記する必要はありません { .caption }
 
     ```
       _pageChanged(page) {
@@ -123,14 +115,13 @@ you need to add it to your app's HTML.
       }
     ```
 
-## Create a navigation menu item
+## ナビゲーションメニュー項目の作成
 
-You've defined your new element and declared it in your app. Now you
-just need to add a menu item in the left-hand drawer so that users can navigate to the new page.
+アプリケーション内に新しい要素定義と宣言を行いました。あとは、ユーザーが新しいページに移動できるように、左側のドロワーナビゲーションメニューに項目を追加するだけです。
 
-1.  Keep `src/my-app.html` open in your editor.
+1.  `src/my-app.html` をエディタで開いたままにしておいてください。
 
-1.  Find the navigation menu inside the `<app-drawer>` element.
+1.  `<app-drawer>` 要素内に、ナビゲーションメニューを見つけることができます。
 
     ```
       <!-- Drawer content -->
@@ -144,15 +135,15 @@ just need to add a menu item in the left-hand drawer so that users can navigate 
       </app-drawer>
     ```
 
-    Each navigation menu item consists of an anchor element (`<a>`) styled with CSS.
+    各ナビゲーションメニュー項目は、CSSでスタイル付けされたアンカー要素（`<a>`）で構成されています。
 
-1.  Add the following new navigation item to the bottom of the menu.
+1.  次の新しいナビゲーション項目をメニューの下部に追加します。
 
     ```
     <a name="new-view" href="/new-view">New View</a>
     ```
 
-    Your menu should now look like the following:
+    ナビゲーションメニューは次のようになります：
 
     ```
     ...
@@ -169,21 +160,19 @@ just need to add a menu item in the left-hand drawer so that users can navigate 
     ...
     ```
 
-Your new page is now ready! Serve your app with `polymer serve --open`.
+新しいページが完成しました！ `polymer serve --open` コマンドを使って、アプリケーションをローカルサーバーで確認してみましょう。
 
 ![Example new page](/images/2.0/toolbox/new-view.png)
 
-## Register the page for the build
+## ビルドのためのページ登録
 
-When you deploy your application to the web, you'll use the Polymer CLI
-to prepare your files for deployment.  Polymer CLI will need to know about any
-demand-loaded fragments like the lazy-loaded view you just added.
+アプリケーションをWebにデプロイする際は、デプロイ用ファイルを準備するためにPolymer CLIを使用します。 Polymer CLIは、遅延ロードビューのような、要求に応じてロードされることになるフラグメント（HTMLコードの断片）について把握しておく必要があります。
 
-1.  Open `polymer.json` in a text editor.
+1.  `polymer.json` をテキストエディタで開きます。
 
-1.  Add `src/my-new-view.html` to the list of `fragments`.
+1.  `fragments` のリストに、`src/my-new-view.html` を追加します。
 
-    The new list should look like this:
+    新しいリストは次のようになります:
 
     ```
     "fragments": [
@@ -195,13 +184,11 @@ demand-loaded fragments like the lazy-loaded view you just added.
     ]
     ```
 
-Note: You only need to add files you will lazy load or import using the `async`
-attribute to the `fragments` list.  Any files that are imported using synchronous
-`<link rel="import">` tags should *not* be added to `fragments`.
+注:  遅延ロードをさせたり、 `async` 属性を使って非同期でロードさせたりするファイルについては、`fragments` リストにファイル名を追加するだけで済みます。 同期読み込みとなる `<link rel = "import">` タグを使用してインポートされたファイルは、 `fragments` に追加*しないで*ください。
 
-## Next steps
+## 次のステップ
 
-You've added a new page to your application. Next, learn how to install and add an off-the-shelf custom element to your app.
+アプリケーションに新しいページを追加しました。次のステップでは、すぐに使える既製のカスタム要素をインストールしてアプリに追加する方法を学びます。
 
 <a class="blue-button"
     href="add-elements">Next step: Add an element</a>
