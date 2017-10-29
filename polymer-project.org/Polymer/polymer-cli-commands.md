@@ -148,3 +148,21 @@ sw-precacheライブラリは、高速化のために[cache-first](http://jakear
 > It should be minimal since it's loaded and cached for each route.
 
 また、ルートごとに読み込まれキャッシュされるため、ファイルサイズを最小限に抑える必要があります。
+
+
+#### --html-minify
+
+> Minify HTMl by removing comments and whitespace.
+  
+コメントと空白を削除してHTMlを縮小します。
+
+
+#### --insert-prefetch-links
+
+> Insert prefetch link elements into your fragments so that all dependencies are prefetched immediately.
+
+すべての依存関係がすぐにプリフェッチされるように、プリフェッチリンクエレメントをフラグメントに挿入します。
+ 
+> Add dependency prefetching by inserting <link rel="prefetch"> tags into entrypoint and <link rel="import"> tags into fragments and shell for all dependencies.
+  
+`<link rel="prefetch">`タグをエントリポイントに挿入し、`<link rel="import">`タグをすべての依存関係のフラグメントとシェルに挿入して、依存関係のプリフェッチを追加します。
