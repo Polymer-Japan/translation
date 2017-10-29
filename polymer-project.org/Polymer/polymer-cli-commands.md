@@ -118,3 +118,33 @@ sw-precacheライブラリは、高速化のために[cache-first](http://jakear
 > This is optimal for sending to clients or serving from servers that are not HTTP/2 compatible.
 
 これは、クライアントへの送信やHTTP/2と互換性のないサーバーからの配信に最適です。
+
+
+#### --css-minify
+
+> Minify inlined and external CSS.
+
+インラインCSS含め、CSSを縮小します。
+
+
+#### --entrypoint
+
+> A filename. 
+
+ファイル名を指定します
+
+> This is the main entrypoint into your application for all routes.
+
+ここで指定したファイルがアプリケーションのエントリポイントになります。
+ 
+> Often times this is your index.html file. 
+
+デフォルトは`index.html`になっています。
+
+> This file should import the app shell file specified in the shell option.
+
+このファイルは、シェルオプションで指定されたアプリケーション[シェル](https://www.polymer-project.org/2.0/docs/tools/polymer-cli-commands#shell)ファイルをインポートする必要があります。
+
+> It should be minimal since it's loaded and cached for each route.
+
+また、ルートごとに読み込まれキャッシュされるため、ファイルサイズを最小限に抑える必要があります。
