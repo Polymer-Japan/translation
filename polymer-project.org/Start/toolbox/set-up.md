@@ -5,55 +5,47 @@ subtitle: "Build an app with App Toolbox"
 
 <!-- toc -->
 
-The [Polymer App Toolbox][toolbox] is a collection of components, tools and
-templates for building Progressive Web Apps with Polymer.
+[Polymer App Toolbox][toolbox] は、Polymerを用いたプログレッシブウェブアプリ（PWA）構築のための、コンポーネント、ツール、テンプレートのコレクションです。
 
-Follow the instructions below to install, build, and deploy a project using an
-App Toolbox template in less than 15 minutes.
+以下の説明に従って、プロジェクトのインストール、ビルド、デプロイをしていきましょう。App Toolboxテンプレートを使えば、15分とかかりません。
 
-## Install Polymer CLI
+## Polymer CLIのインストール
 
-Polymer CLI is an all-in-one command line tool for Polymer projects. In this tutorial you use
-Polymer CLI to initialize, serve, and build your project. You can also use it for linting and
-testing, but this tutorial won't cover those topics.
+Polymer CLIは、Polymerプロジェクトのためのオールインワン・コマンドラインツールです。本チュートリアルでは、Polymer CLIを使用して、プロジェクトを初期化、ローカルサーバーを起動しての確認、およびビルドを行っていきます。Polymer CLIは、lintチェックやテストにも使うことができますが、本チュートリアルではこれらのトピックは扱いません。
 
-Polymer CLI requires Node.js, npm, Git and Bower. For full installation instructions, see [the
-Polymer CLI documentation](/{{{polymer_version_dir}}}/docs/tools/polymer-cli).
+Polymer CLIは、Node.js、npm、Git、Bowerを必要とします。完全なインストール手順については、[the
+Polymer CLI documentation](/{{{polymer_version_dir}}}/docs/tools/polymer-cli)をご覧ください。
 
-To install Polymer CLI:
+下記コマンドでPolymer CLIをインストールします：
 
     npm install -g polymer-cli
 
 
-## Initialize your project from a template
-1. Create a new project folder to start from.
+## テンプレートを用いたプロジェクトの初期化
+1. 新しいプロジェクトフォルダを作成して開始します。
 
         mkdir my-app
         cd my-app
 
-1. Initialize your project with an app template.
+1. アプリケーションテンプレートを使用してプロジェクトを初期化します。
 
         polymer init
 
-    Press the down arrow until `polymer-2-starter-kit` is highlighted and press the enter / return
-    key to select.
+    下矢印キーを押し `polymer-2-starter-kit` がハイライトされたら、enter / return キーを押して選択します。
 
 
-## Serve your project
+## プロジェクトをローカルサーバーで確認
 
-The App Toolbox templates do not require any build steps to get started
-developing.  You can serve the application using the Polymer CLI, and
-file changes you make will be immediately visible by refreshing
-your browser.
+App Toolboxテンプレートには、開発を開始するためのビルドステップは必要ありません。
+Polymer CLIを使用してアプリケーションをローカルサーバーで確認することができ、ファイルの変更はブラウザを更新することによってすぐに表示されます。
 
-To serve your project:
+下記コマンドで、プロジェクトをローカルサーバーで確認できます：
 
     polymer serve --open
 
-## Project structure
+## プロジェクトの構成
 
-The diagram below is a brief summary of the files and directories within
-the project.
+以下の図は、プロジェクト内のファイルとディレクトリの概要です。
 
 ```text
 bower.json             # bower configuration
@@ -76,8 +68,9 @@ sw-precache-config.js  # service worker pre-cache configuration
 test/                  # unit tests
 ```
 
-## Next steps
+## 次のステップ
 
+あなたのアプリは、今ローカル環境で稼働しています。次に、アプリにページを追加する方法を学んでいきます。
 Your app is now up and running locally. Next, learn how to add
 a page to your app.
 
