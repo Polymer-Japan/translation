@@ -5,45 +5,40 @@ subtitle: "Build an app with App Toolbox"
 
 <!-- toc -->
 
-Now that you've added a new view to your application, you can start building
-out the details of that view.
+アプリケーションへの新規ビュー追加が済み、ビューの細かい箇所を構築するスタートラインに立ちました。
 
-In the process, you'll likely want to turn
-to some off-the-shelf components, for example from [webcomponents.org][webcomponents.org].
+このプロセスでは、例えば [webcomponents.org][webcomponents.org] などの既成のコンポーネントを使用したいと思うかもしれません。
 
+## 既成のコンポーネントのインストール
 
-## Install an off-the-shelf component
+インストールしたいコンポーネントを特定したら、コンポーネントのbowerパッケージ名を探してください。
 
-Once you've identified a component you'd like to install, you'll want to find
-the bower package name for the component.
+このステップでは、[webcomponents.org][paper-checkbox]に掲載されているPolymerの `<paper-checkbox>` 要素をアプリに追加します。
+Bowerを使用してインストールすることができます。
 
-In this step, you'll add Polymer's `<paper-checkbox>` element to your app, which is listed on
-[webcomponents.org][paper-checkbox].  You can use Bower to install it.
-
-Run this command from your project root directory:
+プロジェクトのルートディレクトリから次のコマンドを実行してください:
 
     bower install --save PolymerElements/paper-checkbox
 
-## Add the element to your application
+## アプリケーションへの要素追加
 
-1.  Open `src/my-new-view.html` in a text editor.
+1.  テキストエディタで `src/my-new-view.html` を開きます。
 
-1.  Import `paper-checkbox.html` as a dependency.
+1.  依存ファイルである `paper-checkbox.html` をimportします。
 
-    Add this import beneath the existing import for `polymer-element.html`:
+    既に記載のある `polymer-element.html` importの下に下記を追加します:
 
     ```
     <link rel="import" href="../bower_components/paper-checkbox/paper-checkbox.html">
     ```
 
-1.  Add the `<paper-checkbox>` element to the template for the element.
+1.  要素のテンプレートに `<paper-checkbox>` 要素を追加します。
 
     ```
     <paper-checkbox>Ready to deploy!</paper-checkbox>
     ```
 
-    You can add it under the `<h1>` you added in the previous step.  Your new
-    template should look like this:
+    前の手順で追加した `<h1>` の下に追加します。新しいテンプレートは次のようになります:
 
     ```
     <!-- Defines the element's style and local DOM -->
@@ -61,14 +56,14 @@ Run this command from your project root directory:
     </template>
     ```
 
+新しいビューの中で動作しているペーパーチェックボックスを見つけられるはずです：
 You should be able to see the `paper-checkbox` working in your new view now:
 
 ![Example of page with checkbox](/images/2.0/toolbox/starter-kit-checkbox.png)
 
-## Next steps
+## 次のステップ
 
-Now that you've added a 3rd-party component to your page, learn how to
-[deploy the app to the web](deploy).
+サードパーティコンポーネントをページに追加しました。次は、[Webへのアプリケーションのデプロイ](deploy)方法を学んでいきます。
 
 [bower]: http://bower.io/
 [webcomponents.org]: https://www.webcomponents.org
