@@ -5,21 +5,22 @@ subtitle: "Build an app with App Toolbox"
 
 <!-- toc -->
 
-In this step, you'll deploy your application to the web.
+本ステップでは、これまで作成したアプリケーションをWebにデプロイしていきます。
 
-## Build for deployment
+## デプロイビルド
 
-Type `polymer build` to build your Polymer application for production. 
+`polymer build` とコマンドを入力を行い、Polymerアプリケーションを製品用にビルドをかけます。
 
-You can serve different builds of your app to browsers with different capabilities. The Polymer Starter Kit is configured to create three builds:
+異なる機能を持つブラウザ毎に、それぞれのアプリケーションビルドを提供することができます。Polymer Starter Kitは、3つのビルドを作成するように構成されています:
 
-* A bundled, minified build with a service worker, compiled to ES5 for compatibility with older browsers.
-* A bundled, minified build with a service worker. ES6 code is served as-is. This build is for browsers that can handle ES6 code.
-* An unbundled, minified build with a service worker. ES6 code is served as-is. This build is for browsers that support HTTP/2 push.
+* service workerがバンドルされたminifyビルド。オールドブラウザとの互換性を考慮しEC5でのコンパイル。
+* service workerがバンドルされたminifyビルド。ES6コードはそのまま提供。ES6対応ブラウザ向けビルド。
+* service workerがバンドルされないminifyビルド。ES6コードはそのまま提供。 HTTP/2 push対応ブラウザ向けビルド。
 
-In this step, you'll deploy the bundled, compiled build (`es5-bundled`) for maximum compatibility. Serving the other builds requires a more complex serving setup.
+本手順では、バンドルされたコンパイル済ビルド（`es5-bundled`）をデプロイし、最大限の互換性を確保します。
+それ以外のビルドをサーバーへデプロイする場合は、より複雑なセットアップが必要となります。
 
-Builds are configured in the `builds` object in `polymer.json`, a configuration file in the root project folder:
+ビルド設定は、プロジェクトルートフォルダに存在する設定ファイル `polymer.json` 内の `builds` オブジェクトで行われています:
 
 polymer.json { .caption}
 ```
@@ -38,49 +39,47 @@ polymer.json { .caption}
 ...
 ```
 
-The builds will be output to subfolders under the `build/` folder as follows:
+ビルドは `build/` フォルダのサブフォルダへ、次のように出力されます：
 
     build/
       es5-bundled/
       es6-bundled/
       es6-unbundled/
 
-To configure a custom build, you can use command line options, or edit `polymer.json`. Run `polymer help build` for the full list of available options and optimizations. Also, see the documentation on the [polymer.json specification](https://www.polymer-project.org/2.0/docs/tools/polymer-json) and [building your Polymer application for production](https://www.polymer-project.org/2.0/toolbox/build-for-production).
+カスタムビルドを設定するには、コマンドラインオプションを使用するか、`polymer.json` を編集します。 Run `polymer help build` for the full list of available options and optimizations. Also, see the documentation on the [polymer.json specification](https://www.polymer-project.org/2.0/docs/tools/polymer-json) and [building your Polymer application for production](https://www.polymer-project.org/2.0/toolbox/build-for-production).
 
-## Deploy to a server
+## サーバーにデプロイ
 
-Polymer applications can be deployed to any web server.
+Polymerのアプリケーションは、どのWebサーバーにもデプロイできます。
 
+本テンプレートでは、`<app-location>` 要素を使用してURLベースのルーティングを有効にします。
+そのためには、サーバーがエントリーポイントである `index.html` を、全てのルートに対して提供する必要があります。
 This template uses the `<app-location>` element to enable URL-based routing,
 which requires that the server serve the `index.html` entry point for all
 routes.
 
-You can follow one of the sections below to deploy this app to either
-[Google AppEngine](https://cloud.google.com/appengine) or [Firebase
-Static Hosting](https://www.firebase.com/docs/hosting/), which are both free and
-secure approaches for deploying a Polymer app.  The approach
-is similar for other hosting providers.
+下のセクションのいずれかを実行すると、このアプリケーションを[Google AppEngine](https://cloud.google.com/appengine)または[Firebase Static Hosting](https://www.firebase.com/docs/hosting/)にデプロイすることができます。これは、Polymerアプリケーションをデプロイするための無料で安全な方法です。
+他のホスティングプロバイダにおいても同様の手順でのデプロイとなります。
 
-### Deploy with AppEngine
+### AppEngine によるデプロイ
 
-1.  Download the [Google App Engine SDK](https://cloud.google.com/appengine/downloads)
-and follow the instructions for your platform to install it. This tutorial uses the Python SDK.
+1.  [Google App Engine SDK](https://cloud.google.com/appengine/downloads) をダウンロードし、ご使用のプラットフォームの手順に従ってインストールします。本チュートリアルでは、Python SDK を使用します。
 
-1.  [Sign up for an AppEngine account](https://cloud.google.com/appengine).
+1.  [AppEngine アカウントに登録します。](https://cloud.google.com/appengine).
 
-1.  [Open the project dashboard](https://console.cloud.google.com/iam-admin/projects)
-and create a new project.
+1.  [プロジェクトダッシュボードを開き](https://console.cloud.google.com/iam-admin/projects)
+、新しいプロジェクトを作成します。
 
-    * Click the Create Project button.
-    * Type a project name.
-    * Click the Create button.
+    * [プロジェクトの作成]ボタンをクリックします。
+    * プロジェクト名を入力します。
+    * [作成]ボタンをクリックします。
     
-    The App Engine gives you a project ID based on the name of your project.
-    Make note of this ID.
+    App Engineは、プロジェクトの名前に基づいてプロジェクトIDを提供します。
+    このIDを書き留めておきます。
 
-1.  `cd` into the main folder for your app (e.g. `my-app/`).
+1.  `cd` コマンドを使って、アプリのメインフォルダ（たとえば、`my-app/`）に移動します。
 
-1. Create an `app.yaml` file with the following contents:
+1.  次の内容の `app.yaml` ファイルを作成します。:
 
     ```
     runtime: python27
@@ -116,56 +115,54 @@ and create a new project.
       secure: always
     ```
 
-1. Set your project id to the ID given to your app by the App Engine. For example:
+1. プロジェクトIDを、App Engineによってアプリケーションに与えられたIDに設定します。以下は一例です：
    
        gcloud config set project my-app-164409
 
-1. Create your app:
+1. アプリケーションを作成します:
    
        gcloud app create
      
-   You will need to select a region for your app to be deployed in. This can't be changed.
-
-1. Deploy your app:
+   アプリケーションをデプロイする地域を選択する必要がありますが、これは変更できません。
+   
+1. アプリケーションをデプロイします:
    
        gcloud app deploy
 
-1. Your app will be available online at its designated URL. For example:
+1. アプリケーションは、指定されたURLにてオンラインで利用できるようになります。以下はURLの一例です:
    
        https://my-app-164409.appspot.com/new-view
    
-   Open your app URL in your browser by typing this command:
+   以下のコマンドを入力すると、アプリケーションのURLが指定されブラウザが起動します:
    
        gcloud app browse
 
-### Deploy with Firebase
+### Firebase によるデプロイ
 
-The instructions below are based on the [Firebase hosting quick start
-guide](https://www.firebase.com/docs/hosting/quickstart.html).
+以下の手順は、[Firebase hosting quick start guide](https://www.firebase.com/docs/hosting/quickstart.html) に基づいた説明です。
 
-1.  [Sign up for a Firebase account](https://www.firebase.com/signup/).
+1.  [Firebase アカウントに登録します](https://www.firebase.com/signup/)。
 
-1.  Go to [https://www.firebase.com/account](https://www.firebase.com/account) to create a new app. Make note of the project ID associated with your app.
+1.  [https://www.firebase.com/account](https://www.firebase.com/account) へ行き、新しいアプリケーションを作成します（訳者注：[プロジェクトを追加]から新規プロジェクトを作成します）。 アプリケーションに関連付けられているプロジェクトIDを書き留めます。
 
     ![Welcome to Firebase showing Project ID](/images/2.0/toolbox/welcome-firebase.png)
 
-1.  Install the Firebase command line tools.
+1.  Firebaseコマンドラインツールをインストールします。
 
         npm install -g firebase-tools
 
-1.  `cd` into your project folder.
+1.  `cd` コマンドを使って、プロジェクトフォルダに移動します。
 
-1.  Inititalize the Firebase application.
+1.  Firebaseアプリケーションを初期化します。
 
         firebase login
         firebase init
 
-1.  Firebase asks you for a project to associate with your app. Select the one you created earlier.
+1.  Firebaseは、アプリケーションに関連付けられているプロジェクトを尋ねてきます。既に作成済のプロジェクトから一つを選択します。
 
-1.  Firebase asks you the name of your app's public folder. Enter `build/es5-bundled/`.
+1.  Firebaseはアプリケーションのパブリックフォルダ名を尋ねます。`build/es5-bundled/` と入力しenterキーを押します。
 
-1.  Edit your firebase configuration to add support for URL routing. The final
-    `firebase.json` file should look something like this:
+1.  firebaseの設定を編集し、URLルーティング情報を追加します。最終的な `firebase.json` ファイルは、次のようになります:
 	
     ```
     {
@@ -181,13 +178,11 @@ guide](https://www.firebase.com/docs/hosting/quickstart.html).
     }
     ```	
 
-    This instructs Firebase to serve up `index.html` for any URLs that don't
-    otherwise end in a file extension.
+    この設定によって、Firebaseは、ファイル拡張子で終わらないURLに対して、`index.html` を表示するようになります。
 
-1. Deploy your project.
+1. プロジェクトをデプロイします。
    
        firebase deploy
    
-   The URL to your live site is listed in the output. You can also open
-   the site in your default browser by running `firebase open hosting:site`.
+   サイトのURLが出力画面に表示されます。`firebase open hosting:site` コマンドを実行して、デフォルトブラウザにてサイトを表示することもできます。
 
