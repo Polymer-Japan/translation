@@ -1,16 +1,14 @@
 ---
-title: Polymer CLI Commands
+title: Polymer CLI コマンド
 ---
 
 <!-- toc -->
 
-This section explains various useful Polymer CLI commands that you'll want to incorporate into your
-development workflow while you build your element or app project.
+ここでは、エレメントまたはアプリケーションを構築する際に、開発に役立つPolymer CLIコマンドについて説明します。
 
-The commands are intended for both element and app projects unless otherwise
-noted.
+コマンドは、特に明記しない限り、エレメントとアプリケーションの両方を対象としています。
 
-* [polymer build (for app projects only)](#build)
+* [polymer build (プロジェクトのみ)](#build)
 * [polymer init](#init)
 * [polymer install](#install)
 * [polymer lint](#lint)
@@ -20,21 +18,15 @@ noted.
 
 ## polymer build {#build}
 
-*This command is for app projects only.*
+*このコマンドはアプリケーションのみを対象としております。*
 
-Generates a production-ready build of your app. This process includes minifying the HTML, CSS, and
-JS of the application dependencies, and generating a service worker to pre-cache dependencies.
+プロダクション対応のアプリケーションを生成します。このプロセスでは、アプリケーションのHTML、CSS、JSを縮小し、依存関係をキャッシュするサービスワーカーを生成します。
 
-Polymer CLI's build process is designed for apps that follow the [PRPL pattern](/{{{polymer_version_dir}}}/toolbox/prpl). 
+Polymer CLIのビルドプロセスは、[PRPLパターン](/{{{polymer_version_dir}}}/toolbox/prpl)に沿ってアプリケーションを設計しています。
 
-To make sure your app builds properly, create a `polymer.json` file 
-at the top-level of your project and store your build configurations there. [See the polymer.json
-specification for more information](polymer-json).
+アプリケーションが適切にビルドされていることを確認するには、プロジェクトの先頭に`polymer.json`ファイルを作成し、そこにビルド設定を保存します。詳細については、[polymer.jsonの仕様](https://www.polymer-project.org/2.0/docs/tools/polymer-json)を参照してください。
 
-You can also pass equivalent values via the following command-line flags. This can be useful for
-building simple projects on your machine but you will need to include the flag every time you run
-the command. For most projects a `polymer.json` configuration file will be easier to work with and
-share across your team.
+次のcommand-lineフラグを使用して同等の値を渡すこともできます。これはシンプルなプロジェクトを構築するのに便利ですが、コマンドを実行するたびにフラグを含める必要があります。 多くのプロジェクトでは、`polymer.json`を作成することで設定を共有しやすくなります。
 
 * [--add-service-worker](#service-workers)
 * [--bundle](#bundles)
@@ -47,50 +39,36 @@ share across your team.
 * [--shell](#shell)
 * [--fragment](#fragment)
 
-A set of presets have been provided to cover common configurations - see the section below 
-on [build presets](#presets).
+共通の設定をカバーするプリセットが用意されています。以下の[ビルドプリセット](#presets)のセクションを参照してください。
 
 ### --add-service-worker {#service-workers}
 
-Generate a service worker for your application to cache all files and assets on the client.
+アプリケーションのすべてのファイルをキャッシュするサービスワーカーを生成します。
 
-Polymer CLI will generate a service worker for your build using the
-[sw-precache](https://github.com/GoogleChrome/sw-precache) library. To customize your service
-worker, create a `sw-precache-config.js` file in your project directory that exports your
-configuration. See the [sw-precache README](https://github.com/GoogleChrome/sw-precache) for a list
-of all supported options.
+Polymer CLIは、[sw-precache](https://github.com/GoogleChrome/sw-precache)ライブラリを使用してビルド用のサービスワーカーを生成します。サービスワーカーに変更を加えるには、プロジェクトディレクトリに`sw-precache-config.js`ファイルを作成します。サポートされているオプションについては、sw-precacheの[README](https://github.com/GoogleChrome/sw-precache)を参照してください。
 
-Note that the sw-precache library uses a cache-first strategy for maximum speed and makes some
-other assumptions about how your service worker should behave. Read the
-["Considerations"](https://github.com/GoogleChrome/sw-precache#considerations) section of the
-sw-precache README to make sure that this is suitable for your application.
+sw-precacheライブラリは、高速化のために[cache-first](http://jakearchibald.com/2014/offline-cookbook/#cache-falling-back-to-network)を使用します。サービスワーカーに他の用途を持たせる場合に注意してください。このオプションがアプリケーションに適していることを確認するには、sw-precache READMEの [Considerationsセクション](https://github.com/GoogleChrome/sw-precache#considerations)を読んでください。
 
 ### --bundle {#bundles}
 
-By default, fragments are unbundled. This is optimal for HTTP/2-compatible servers and clients.
+デフォルトでは、フラグメントはバンドルされていません。これは、HTTP/2互換のサーバーとクライアントに最適です。
 
-If the `--bundle` flag is supplied, all fragments are bundled together to reduce the number of file
-requests. This is optimal for sending to clients or serving from servers that are not HTTP/2
-compatible.
+`--bundle`フラグを指定すると、すべてのフラグメントがバンドルされ、ファイルリクエストの数が削減されます。これは、クライアントへの送信やHTTP/2と互換性のないサーバーからの配信に最適です。
 
 ### --css-minify {#css-minify}
 
-Minify inlined and external CSS.
+インラインCSS含め、CSSを縮小します。
 
 ### --entrypoint {#entrypoint}
 
-A filename. This is the main entrypoint into your application for all routes. Often times this is
-your `index.html` file. This file should import the app shell file specified in the
-[`shell`](#shell) option. It should be minimal since it's loaded and cached for each route.
+ファイル名を指定します。ここで指定したファイルがアプリケーションのエントリポイントになります。デフォルトは`index.html`になっています。このファイルは、シェルオプションで指定されたアプリケーション[シェル](https://www.polymer-project.org/2.0/docs/tools/polymer-cli-commands#shell)ファイルをインポートする必要があります。また、ルートごとに読み込まれキャッシュされるため、ファイルサイズを最小限に抑える必要があります。
 
 ### --html-minify {#html-minify}
 
-Minify HTMl by removing comments and whitespace.
+コメントと空白を削除してHTMlを縮小します。
 
 ### --insert-prefetch-links {#prefetch}
-Insert prefetch link elements into your fragments so that all dependencies are prefetched
-immediately. Add dependency prefetching by inserting `<link rel="prefetch">` tags into entrypoint
-and `<link rel="import">` tags into fragments and shell for all dependencies.
+すべての依存関係がすぐにプリフェッチされるように、プリフェッチリンクエレメントをフラグメントに挿入します。`<link rel="prefetch">`タグをエントリポイントに挿入し、`<link rel="import">`タグをすべての依存関係のフラグメントとシェルに挿入して、依存関係のプリフェッチを追加します。
 
 ### --js-compile {#js-compile}
 
