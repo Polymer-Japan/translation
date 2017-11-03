@@ -56,7 +56,7 @@ Custom Elementは定義されましたが、まだアプリケーションによ
 
 1.  テキストエディタで`src/my-app.html`を開きます。
 
-1.  `<iron-pages>`エレメント内に既存ページ一式を見つける事ができます:
+1.  `<iron-pages>`エレメント内に既存ページ一式を見つける事ができます：
 
     ```
     <iron-pages
@@ -73,7 +73,7 @@ Custom Elementは定義されましたが、まだアプリケーションによ
 
     `<iron-pages>`は、ルートと共に変化する`page`変数にバインドされ、他のページを隠しながらアクティブなページを選択します。
 
-1.  iron-pagesタグ内に新規ページエレメントを追加します:
+1.  iron-pagesタグ内に新規ページエレメントを追加します：
 
     ```
     <my-new-view name="new-view"></my-new-view>
