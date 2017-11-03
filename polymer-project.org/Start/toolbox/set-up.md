@@ -1,22 +1,22 @@
 ---
-title: Step 1. Get set up
-subtitle: "Build an app with App Toolbox"
+title: Step 1. セットアップ
+subtitle: "App Toolboxでアプリケーションを作成しよう"
 ---
 
 <!-- toc -->
 
-[Polymer App Toolbox][toolbox] は、Polymerを用いたプログレッシブウェブアプリ（PWA）構築のための、コンポーネント、ツール、テンプレートのコレクションです。
+[Polymer App Toolbox][toolbox] は、Polymerを用いたプログレッシブウェブアプリ（PWA）構築のための、コンポーネント、ツール、テンプレートを集めたものです。
 
 以下の説明に従って、プロジェクトのインストール、ビルド、デプロイをしていきましょう。App Toolboxテンプレートを使えば、15分とかかりません。
 
 ## Polymer CLIのインストール
 
-Polymer CLIは、Polymerプロジェクトのためのオールインワン・コマンドラインツールです。本チュートリアルでは、Polymer CLIを使用して、プロジェクトを初期化、ローカルサーバーを起動しての確認、およびビルドを行っていきます。Polymer CLIは、lintチェックやテストにも使うことができますが、本チュートリアルではこれらのトピックは扱いません。
+Polymer CLIは、Polymerプロジェクトのためのオールインワン・コマンドラインツールです。本チュートリアルでは、Polymer CLIを使用して、プロジェクトの初期化、ローカルサーバーを起動しての確認、およびビルドを行っていきます。Polymer CLIは、lintチェックやテストにも使うことができますが、本チュートリアルではこれらのトピックは扱いません。
 
 Polymer CLIは、Node.js、npm、Git、Bowerを必要とします。完全なインストール手順については、[the
 Polymer CLI documentation](/{{{polymer_version_dir}}}/docs/tools/polymer-cli)をご覧ください。
 
-下記コマンドでPolymer CLIをインストールします：
+下記コマンドで、Polymer CLIをインストールします：
 
     npm install -g polymer-cli
 
@@ -36,7 +36,7 @@ Polymer CLI documentation](/{{{polymer_version_dir}}}/docs/tools/polymer-cli)を
 
 ## プロジェクトをローカルサーバーで確認
 
-App Toolboxテンプレートには、開発を開始するためのビルドステップは必要ありません。
+App Toolboxテンプレートは、開発を始めるのに、ビルドする手順は必要としません。
 Polymer CLIを使用してアプリケーションをローカルサーバーで確認することができ、ファイルの変更はブラウザを更新することによってすぐに表示されます。
 
 下記コマンドで、プロジェクトをローカルサーバーで確認できます：
@@ -70,9 +70,7 @@ test/                  # unit tests
 
 ## 次のステップ
 
-あなたのアプリは、今ローカル環境で稼働しています。次に、アプリにページを追加する方法を学んでいきます。
-Your app is now up and running locally. Next, learn how to add
-a page to your app.
+アプリケーションは、今ローカル環境で稼働しています。次のステップでは、アプリケーションにページを追加する方法を学んでいきます。
 
 <a class="blue-button"
     href="create-a-page">Next step: Create a page</a>
