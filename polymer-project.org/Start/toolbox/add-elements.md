@@ -1,5 +1,5 @@
 ---
-title: Step 3. 要素の追加
+title: Step 3. エレメントの追加
 subtitle: "App Toolboxでアプリケーションを作成しよう"
 ---
 
@@ -13,31 +13,31 @@ subtitle: "App Toolboxでアプリケーションを作成しよう"
 
 インストールしたいコンポーネントを特定したら、コンポーネントのbowerパッケージ名を探してください。
 
-本ステップでは、[webcomponents.org][paper-checkbox]に掲載されているPolymerの`<paper-checkbox>`要素をアプリケーションに追加します。Bowerを使用してインストールすることができます。
+本ステップでは、[webcomponents.org][paper-checkbox]に掲載されているPolymerの`<paper-checkbox>`エレメントをアプリケーションに追加します。Bowerを使用してインストールすることができます。
 
-プロジェクトのルートディレクトリから次のコマンドを実行してください:
+プロジェクトのルートディレクトリから次のコマンドを実行してください：
 
     bower install --save PolymerElements/paper-checkbox
 
-## アプリケーションへの要素追加
+## アプリケーションへのエレメント追加
 
 1.  テキストエディタで`src/my-new-view.html`を開きます。
 
 1.  依存ファイルである`paper-checkbox.html`をimportします。
 
-    既存の`polymer-element.html`を読み込んでいる<link rel="import">文の下部に、次の文を追加します:
+    既存の`polymer-element.html`を読み込んでいる<link rel="import">文の下部に、次の文を追加します：
 
     ```
     <link rel="import" href="../bower_components/paper-checkbox/paper-checkbox.html">
     ```
 
-1.  テンプレートに`<paper-checkbox>`要素を追加します。
+1.  テンプレートに`<paper-checkbox>`エレメントを追加します。
 
     ```
     <paper-checkbox>Ready to deploy!</paper-checkbox>
     ```
 
-    前の手順で追加した`<h1>`の下に追加します。新しいテンプレートは次のようになります:
+    前の手順で追加した`<h1>`の下に追加します。新しいテンプレートは次のようになります：
 
     ```
     <!-- Defines the element's style and local DOM -->
