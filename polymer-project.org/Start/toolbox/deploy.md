@@ -52,7 +52,7 @@ polymer.json { .caption}
 
 Polymerのアプリケーションは、どのWebサーバーにもデプロイできます。
 
-本テンプレートでは、`<app-location>`要素を使用してURLベースのルーティングを有効にします。
+本テンプレートでは、`<app-location>`エレメントを使用してURLベースのルーティングを有効にします。
 そのためには、サーバーが、エントリーポイントである`index.html`を全てのルートに対して提供する必要があります。
 
 下のセクションのいずれかを実行すると、このアプリケーションを[Google AppEngine](https://cloud.google.com/appengine)または[Firebase Static Hosting](https://www.firebase.com/docs/hosting/)にデプロイすることができます。これは、Polymerアプリケーションをデプロイするための無料でセキュアな方法です。他のホスティングプロバイダにおいても同様の手順でのデプロイとなります。
