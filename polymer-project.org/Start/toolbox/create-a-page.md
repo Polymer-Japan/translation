@@ -189,4 +189,4 @@ Custom Elementは定義されましたが、まだアプリケーションによ
 アプリケーションに新規ページを追加しました。次のステップでは、すぐに使える既製のCustom Elementをインストールしアプリケーションに追加する方法を学びます。
 
 <a class="blue-button"
-    href="add-elements">Next step: Add an element</a>
+    href="add-elements">次のページ： エレメントの追加</a>
