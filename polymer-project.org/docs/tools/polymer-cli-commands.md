@@ -72,11 +72,11 @@ sw-precacheライブラリは、高速化のために[cache-first](http://jakear
 
 ### --js-compile {#js-compile}
 
-Use babel to compile all ES6 JS down to ES5 for older browsers.
+babelを使用して、すべてのES6 JSをオールドブラウザのES5までコンパイルします。
 
 ### --js-minify {#js-minify}
 
-Minify inlined and external JavaScript.
+インラインJavaScriptおよび外部JavaScriptを縮小します。
 
 ### --shell {#shell}
 
@@ -184,13 +184,13 @@ This means that on line 83 of `index.html` there's an `<iron-collapse>` tag, but
 
 ## polymer serve {#serve}
 
-Runs a local web server.
+ローカルWebサーバーを実行します。
 
-If you want to view a live demo of your element or app, run the local web server:
+エレメントまたはアプリのライブデモを表示するには、ローカルWebサーバーを実行します：
 
     polymer serve
 
-To view the demo, point your browser to one of the following URLs.
+デモを表示するには、ブラウザで次のいずれかのURLを指定します。
 
 Element project demo:
 
