@@ -73,7 +73,7 @@ test/                  # unit tests
 アプリケーションは、今ローカル環境で稼働しています。次のステップでは、アプリケーションにページを追加する方法を学んでいきます。
 
 <a class="blue-button"
-    href="create-a-page">Next step: Create a page</a>
+    href="create-a-page">次のステップ： 新規ページの作成</a>
 
 [toolbox]: /2.0/toolbox/
 [md]: http://www.google.com/design/spec/material-design/introduction.html
