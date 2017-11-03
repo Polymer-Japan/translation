@@ -1,20 +1,19 @@
 ---
-title: Step 3. Add some elements
-subtitle: "Build an app with App Toolbox"
+title: Step 3. 要素の追加
+subtitle: "App Toolboxでアプリケーションを作成しよう"
 ---
 
 <!-- toc -->
 
 アプリケーションへの新規ビュー追加が済み、ビューの細かい箇所を構築するスタートラインに立ちました。
 
-このプロセスでは、例えば [webcomponents.org][webcomponents.org] などの既成のコンポーネントを使用したいと思うかもしれません。
+この過程において、例えば[webcomponents.org][webcomponents.org]のような既成のコンポーネントを使用したいと思うかもしれません。
 
 ## 既成のコンポーネントのインストール
 
 インストールしたいコンポーネントを特定したら、コンポーネントのbowerパッケージ名を探してください。
 
-このステップでは、[webcomponents.org][paper-checkbox]に掲載されているPolymerの `<paper-checkbox>` 要素をアプリに追加します。
-Bowerを使用してインストールすることができます。
+本ステップでは、[webcomponents.org][paper-checkbox]に掲載されているPolymerの`<paper-checkbox>`要素をアプリケーションに追加します。Bowerを使用してインストールすることができます。
 
 プロジェクトのルートディレクトリから次のコマンドを実行してください:
 
@@ -22,23 +21,23 @@ Bowerを使用してインストールすることができます。
 
 ## アプリケーションへの要素追加
 
-1.  テキストエディタで `src/my-new-view.html` を開きます。
+1.  テキストエディタで`src/my-new-view.html`を開きます。
 
-1.  依存ファイルである `paper-checkbox.html` をimportします。
+1.  依存ファイルである`paper-checkbox.html`をimportします。
 
-    既に記載のある `polymer-element.html` importの下に下記を追加します:
+    既存の`polymer-element.html`を読み込んでいる<link rel="import">文の下部に、次の文を追加します:
 
     ```
     <link rel="import" href="../bower_components/paper-checkbox/paper-checkbox.html">
     ```
 
-1.  要素のテンプレートに `<paper-checkbox>` 要素を追加します。
+1.  テンプレートに`<paper-checkbox>`要素を追加します。
 
     ```
     <paper-checkbox>Ready to deploy!</paper-checkbox>
     ```
 
-    前の手順で追加した `<h1>` の下に追加します。新しいテンプレートは次のようになります:
+    前の手順で追加した`<h1>`の下に追加します。新しいテンプレートは次のようになります:
 
     ```
     <!-- Defines the element's style and local DOM -->
@@ -56,14 +55,13 @@ Bowerを使用してインストールすることができます。
     </template>
     ```
 
-新しいビューの中で動作しているペーパーチェックボックスを見つけられるはずです：
-You should be able to see the `paper-checkbox` working in your new view now:
+これで、新しいビューの中で動作している`paper-checkbox`を見つけられるはずです：
 
 ![Example of page with checkbox](/images/2.0/toolbox/starter-kit-checkbox.png)
 
 ## 次のステップ
 
-サードパーティコンポーネントをページに追加しました。次は、[Webへのアプリケーションのデプロイ](deploy)方法を学んでいきます。
+サードパーティのコンポーネントをページに追加しました。次は、[Webへのアプリケーションのデプロイ](deploy)方法を学んでいきます。
 
 [bower]: http://bower.io/
 [webcomponents.org]: https://www.webcomponents.org
