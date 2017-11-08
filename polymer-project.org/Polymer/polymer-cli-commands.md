@@ -166,3 +166,21 @@ sw-precacheライブラリは、高速化のために[cache-first](http://jakear
 > Add dependency prefetching by inserting <link rel="prefetch"> tags into entrypoint and <link rel="import"> tags into fragments and shell for all dependencies.
   
 `<link rel="prefetch">`タグをエントリポイントに挿入し、`<link rel="import">`タグをすべての依存関係のフラグメントとシェルに挿入して、依存関係のプリフェッチを追加します。
+
+#### --js-compile
+
+> Use babel to compile all ES6 JS down to ES5 for older browsers.
+  
+古いブラウザ向けに、ES6をES5にコンパイルする`babel`を使います。
+
+#### --js-minify
+
+> Minify inlined and external JavaScript.
+
+インラインJavaScriptと外部JavaScriptを縮小します。
+
+#### --shell
+
+> The app shell file containing common code for the app.
+
+アプリの共通コードを含むアプリケーションシェルファイルを指定します。
