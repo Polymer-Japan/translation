@@ -184,3 +184,62 @@ sw-precacheライブラリは、高速化のために[cache-first](http://jakear
 > The app shell file containing common code for the app.
 
 アプリの共通コードを含むアプリケーションシェルファイルを指定します。
+
+
+#### --fragment
+
+> This flag supports dynamic dependencies. 
+
+このフラグは動的依存関係をサポートします。
+
+> It is an array of any HTML filenames that are not statically linked from the app shell (that is, imports loaded on demand by importHref).
+  
+これは、アプリケーションシェルから静的にリンクされていない、HTMLファイル名の入った配列です。（つまり、`importHref`より必要に応じて読み込まれたものでえす）
+
+
+> If a fragment has static dependencies, provided the fragment is defined in this property, the Polymer build analyzer will find them.
+
+フラグメントに静的な依存関係がある場合、フラグメントがこのプロパティで定義されている場合は、Polymerビルドアナライザがそれらを検出します。
+
+> You only need to list the file imported by importHref.
+
+importHrefでインポートされたファイルをリストするだけです。
+
+
+
+> In a Polymer app, 
+
+Polymer アプリケーションでは
+
+> the files listed in the fragments flag usually contain one or more element definitions that may or may not be required during the user’s interaction with the app, and can thus be lazily loaded.
+
+フラグメントフラグに羅列されているファイルには、通常、ユーザがアプリケーションとやりとりしている間に必要となるかもしれない要素定義が含まれていて、遅延ロードすることができます。
+
+#### プリセットを作成する
+
+```
+polymer build --preset preset-name
+```
+
+> Build presets provide an easy way to create common build configurations. 
+
+ビルドプリセットは、共通のビルド構成を簡単に作成する方法を提供します。
+
+> When you provide a valid preset for your build, it will use the flags in that preset. 
+
+ビルドに有効なプリセットを指定すると、そのプリセットのフラグが使用されます。
+
+> We currently support 3 different presets:
+
+現在、3種類のプリセットをサポートしています
+
+#### 例
+
+> Create a bundled build for browsers that support ES5:
+
+ES5をサポートするブラウザのバンドルビルドを作成します。
+
+> Create an unbundled build for browsers that support ES6
+
+ES6をサポートするブラウザのバンドルしないビルドを作成します。
+
