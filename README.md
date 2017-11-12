@@ -41,4 +41,4 @@ https://docs.google.com/spreadsheets/d/1u5jd2pkTnWKkIeUtZa-3bu3hTYYrVY3oluzd_meD
 どこにページを追加するかは検討中。
 
 ## 翻訳するときに注意すること
-翻訳時に注意することは[Polymer-Japan/docsリポジトリのWiki]()にまとまっているので、必ず参照してください。
+翻訳時に注意することは[Polymer-Japan/docsリポジトリのWiki](https://github.com/Polymer-Japan/docs.wiki.git)にまとまっているので、必ず参照してください。
