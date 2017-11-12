@@ -1,16 +1,16 @@
 # Polymer-Japan/translation
 
 ## 概要
-このリポジトリはPolymer公式ドキュメント以外の翻訳を行うリポジトリです。
-公式ドキュメントは下記リポジトリで翻訳を行っています。
+このリポジトリはPolymer公式ドキュメント以外の翻訳を行うリポジトリです。  
+公式ドキュメントは下記リポジトリで翻訳を行っています。  
 [Polymer-Japan/docs](https://github.com/Polymer-Japan/docs)
 
 ## 翻訳対象
 このリポジトリでは主に以下のようなウェブサイト、ドキュメントの翻訳を行います。
 
-[webcomponents.org](https://www.webcomponents.org/)
-[Web Fundamentals](https://developers.google.com/web/fundamentals/)
-[Code labs](https://codelabs.developers.google.com/)
+* [webcomponents.org](https://www.webcomponents.org/)
+* [Web Fundamentals](https://developers.google.com/web/fundamentals/)
+* [Code labs](https://codelabs.developers.google.com/)
 
 ### 翻訳対象リスト
 https://docs.google.com/spreadsheets/d/1u5jd2pkTnWKkIeUtZa-3bu3hTYYrVY3oluzd_meDsBE/edit?usp=sharing
