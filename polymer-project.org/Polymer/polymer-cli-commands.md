@@ -243,3 +243,48 @@ ES5をサポートするブラウザのバンドルビルドを作成します�
 
 ES6をサポートするブラウザのバンドルしないビルドを作成します。
 
+### polymer init
+
+> Initializes a Polymer project from one of several templates.
+
+いくつかのテンプレートの1つからPolymerプロジェクトを初期化します。
+
+> Pre-bundled templates range from just bare-bones to fully featured applications like the Polymer Shop app.
+  
+用意されているテンプレートには、基本的なものから[Polymer Shopアプリ](https://www.polymer-project.org/2.0/toolbox/case-study)のような完全に機能するアプリケーションまで、色々のものがあります。
+
+
+
+> Run polymer init to choose a template from a list of all installed templates. 
+
+`polymer init`を実行しますと、インストールされているテンプレートの中からひとつを選択します。
+
+> Or, if you know the template name before hand, you can provide it as a command argument to select it automatically.
+
+または、テンプレート名がわかっている場合は、それをコマンド引数として指定することができます。
+
+> See the polymer-cli readme for more information on the polymer init command.
+
+`polymer init`コマンドの詳細については、[polymer-cli readme](https://github.com/Polymer/polymer-cli#polymer-init-template)を参照してください。
+
+> See also
+
+以下も参考にして下さい
+
+> Create an element project with the Polymer CLI
+
+[Polymer CLIを使用したエレメントプロジェクトの作成](https://www.polymer-project.org/2.0/docs/tools/create-element-polymer-cli)
+
+> Create an application project with the Polymer CLI
+
+[Polymer CLIを使用したアプリケーションプロジェクトの作成](https://www.polymer-project.org/2.0/docs/tools/create-app-polymer-cli)
+
+> Case study of the Polymer Shop app
+
+[Polymer Shopアプリのケーススタディ](https://www.polymer-project.org/2.0/toolbox/case-study)
+
+
+
+
+
+
