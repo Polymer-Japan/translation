@@ -23,7 +23,7 @@ https://docs.google.com/spreadsheets/d/1u5jd2pkTnWKkIeUtZa-3bu3hTYYrVY3oluzd_meD
 3. コミットメッセージにはissueのIDを入れる。（例：「#10 誤字修正」）
 4. 翻訳作業が終わったらPRを作成し、カードをレビュー中に移動する。
 5. レビューが終わったらカードを「レビュー完了」に移動する。
-6. デプロイ作業を行い、その後masterにマージする。その後、カードを「完了」に移動する。
+6. デプロイ作業を行い、その後masterにマージする。その後、issueをクローズする。
 
 わからないことがあればSlackで@Katsunori Tanakaか@takanori okiあてに質問してください。
 
