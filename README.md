@@ -36,8 +36,8 @@ https://docs.google.com/spreadsheets/d/1u5jd2pkTnWKkIeUtZa-3bu3hTYYrVY3oluzd_meD
 [WebFundamentals/src/content/ja/fundamentals/](https://github.com/google/WebFundamentals/tree/master/src/content/ja/fundamentals)
 
 ### webcomponents.org, Code labs
-これらは[Polymer Japanの公式サイト](https://polymer-jp.org/)で公開します。
-公式サイト上でページの編集ができるので、@howkingさんに権限をもらうか、@Katsunori Tanakaか@takanori okiに依頼してください。
+これらは[Polymer Japanの公式サイト](https://polymer-jp.org/)で公開します。  
+公式サイト上でページの編集ができるので、`@howking`さんに権限をもらうか、`@Katsunori Tanaka`か`@takanori oki`に依頼してください。  
 どこにページを追加するかは検討中。
 
 ## 翻訳するときに注意すること
