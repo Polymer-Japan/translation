@@ -42,3 +42,11 @@ https://docs.google.com/spreadsheets/d/1u5jd2pkTnWKkIeUtZa-3bu3hTYYrVY3oluzd_meD
 
 ## 翻訳するときに注意すること
 翻訳時に注意することは[Polymer-Japan/docsリポジトリのWiki](https://github.com/Polymer-Japan/docs/wiki/%E7%BF%BB%E8%A8%B3%E3%81%AE%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85)にまとまっているので、必ず確認、遵守してください。
+
+## textlint
+ローカルでtextlintを使用するには下記コマンドを実行してください。（node.jsがインストールされていることが前提です。）
+
+```
+yarn install
+yarn textlint
+```

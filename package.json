@@ -1,0 +1,26 @@
+{
+  "name": "translation",
+  "version": "1.0.0",
+  "description": "## 概要 このリポジトリはPolymer公式ドキュメント以外の翻訳を行うリポジトリです。   公式ドキュメントは下記リポジトリで翻訳を行っています。   [Polymer-Japan/docs](https://github.com/Polymer-Japan/docs)",
+  "main": "index.js",
+  "scripts": {
+    "lint": "textlint ./*.md",
+    "lint-fix": "textlint --fix ./*.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Polymer-Japan/translation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Polymer-Japan/translation/issues"
+  },
+  "homepage": "https://github.com/Polymer-Japan/translation#readme",
+  "dependencies": {
+    "textlint": "^9.1.1",
+    "textlint-rule-preset-ja-technical-writing": "^2.0.0",
+    "textlint-rule-spellcheck-tech-word": "^5.0.0"
+  }
+}
