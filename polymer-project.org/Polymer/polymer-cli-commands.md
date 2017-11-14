@@ -284,7 +284,25 @@ ES6をサポートするブラウザのバンドルしないビルドを作成�
 [Polymer Shopアプリのケーススタディ](https://www.polymer-project.org/2.0/toolbox/case-study)
 
 
+### polymer install
+
+> Installs Bower dependencies. Running polymer install is equivalent to running bower install.
+
+Bowerよりインストールを行います。`polymer install`は、`bower install`と同じように動きます。
+
+> The --variants flag allows you to install dependency variants. 
+
+`--variants`フラグを使用すると、バージョン依存をインストール出来ます。
+
+> See the documentation on managing dependencies for hybrid elements for more information.
+  
+詳細については、[ハイブリッドエレメントの依存関係の管理](https://www.polymer-project.org/2.0/docs/devguide/hybrid-elements#dependency-variants)に関するドキュメントを参照してください。
 
 
+> The --offline flag tells the install command not to hit the network to retrieve components.
 
+`--offline`フラグは、ネットワークからコンポーネントを取得させないようにします。
+ 
+> If components are not cached, the install will fail.
 
+これは、コンポーネントがキャッシュされていない場合には、インストールは失敗します。
