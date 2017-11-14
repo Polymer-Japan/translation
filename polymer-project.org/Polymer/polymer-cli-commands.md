@@ -306,3 +306,29 @@ Bowerよりインストールを行います。`polymer install`は、`bower ins
 > If components are not cached, the install will fail.
 
 これは、コンポーネントがキャッシュされていない場合には、インストールは失敗します。
+
+
+### polymer lint
+
+> Analyze your project for syntax errors, missing imports, bad databinding expressions and more. 
+
+プロジェクトの構文、インポート、データバインディングなどにエラーが無いかをチェックします。
+
+> polymer lint helps with identifying issues across your HTML, JS, and CSS based on an in-depth analysis of web components in source code.
+
+`polymer lint`は、ソースコード内のWebコンポーネントの分析から、HTML、JS、およびCSSの問題を特定するのに役立ちます。
+ 
+> It does not reinvent the wheel though, it focuses on issues specific to web components and Polymer, so it is a good adjunct to other tools like eslint and htmlhint.
+
+`polymer lint`は、WebコンポーネントとPolymerに焦点を当てており、`eslint`や`htmlhint`のような他のlintツールのような機能は持っておりません。
+
+> Use it like so:
+
+使い方
+
+```
+ polymer lint --rules=polymer-2
+```
+
+
+
