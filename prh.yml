@@ -1,0 +1,13 @@
+version: 1
+imports:
+  - prh/ja/jser-info.yml
+  - prh/ja/kanji-open.yml
+  - prh/ja/spoken.yml
+  - prh/ja/typo.yml
+  - prh/javascript.yml
+  - prh/css.yml
+  - prh/software.yml
+rules:
+  # project configuration
+  - expected: Almin
+    patterns: /almin.js/i
