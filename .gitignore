@@ -57,3 +57,7 @@ $RECYCLE.BIN/
 *.iml
 out
 gen
+
+# node modules
+node_modules
+*.log
