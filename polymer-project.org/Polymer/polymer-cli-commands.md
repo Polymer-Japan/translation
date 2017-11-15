@@ -330,5 +330,15 @@ Bowerよりインストールを行います。`polymer install`は、`bower ins
  polymer lint --rules=polymer-2
 ```
 
+> This will lint all of the code in your project with the polymer-2 ruleset, which is appropriate for projects using Polymer 2.0.
+
+これにより、`polymer-2`のルールに適するように、プロジェクトをlintします。
+
+> If your code is hybrid and should work with either Polymer 1.x or 2.x then polymer-2-hybrid is a better choice, as it will warn you about use of features that do not exist in Polymer 2.x.
+
+コードがハイブリッドで、Polymer 1.x、または、2.xで動作する必要がある場合は、Polymer 2.xには存在しない機能を使用すると警告されますので、`polymer-2-hybrid`を選択することをお勧めします。
+
+
+
 
 
