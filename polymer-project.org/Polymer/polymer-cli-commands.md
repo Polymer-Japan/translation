@@ -339,6 +339,25 @@ Bowerよりインストールを行います。`polymer install`は、`bower ins
 コードがハイブリッドで、Polymer 1.x、または、2.xで動作する必要がある場合は、Polymer 2.xには存在しない機能を使用すると警告されますので、`polymer-2-hybrid`を選択することをお勧めします。
 
 
+> You can pass flags to the linter like --rules but even better is to put the configuration in polymer.json so that all you need to do is run polymer lint. 
+
+linterに`--rules`のようなフラグを渡すことはできますが、`polymer.json`に設定を書くことで`polymer int`のみで実行が可能になります。
+
+> Putting your configuration in polymer.json also means that other tools, like IDE plugins can use the same lint configuration.
+  
+ここで設定した内容は、IDEプラグインのような、他のツールにも使うことができます。
+
+> Here's what that looks like:
+
+設定の例:
+
+```
+  "lint": {
+      "rules": ["polymer-2"],
+      "ignoreWarnings": []
+  }
+```
+
 
 
 
