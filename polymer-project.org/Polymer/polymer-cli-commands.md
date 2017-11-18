@@ -358,6 +358,15 @@ linterに`--rules`のようなフラグを渡すことはできますが、`poly
   }
 ```
 
+> rules: An array of lint rules and rule collections to run on your project.
+
+rules: lintルールを設定する配列。
+ 
+> For most projects, one of polymer-2, polymer-2-hybrid, or polymer-1 is all that's needed here.
+
+多くのプロジェクトでは、`polymer-2`、`polymer-2-hybrid`、または`polymer-1`のいずれかが必要になります。
 
 
+> ignoreWarnings: An array of warning codes to ignore.
 
+ignoreWarnings: 無効にしたい警告を指定する配列になります。
