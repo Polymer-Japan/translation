@@ -370,3 +370,23 @@ rules: lintルールを設定する配列。
 > ignoreWarnings: An array of warning codes to ignore.
 
 ignoreWarnings: 無効にしたい警告を指定する配列になります。
+
+#### Warning Codes:
+
+> The output of polymer lint looks like this:
+
+Warningが会った場合に、次のように表示されます
+
+> This means that on line 83 of index.html there's an <iron-collapse> tag, but the linter can't find the definition of the iron-collapse custom element.
+
+上記は、index.html 83行目に`<iron-collapse>`タグがありますが、`iron-collapse`カスタムエレメントを見つけることが出来ません。と表しております。
+ 
+> This probably means that there's a missing HTML import in index.html. 
+
+`index.html`のHTMLインポートが間違っていることが予想されます。
+
+> To ignore this warning, add undefined-elements to the ignoreWarnings array in polymer.json.
+
+この警告を無効にする場合は、`polymer.json`の`ignoreWarnings`配列に、`undefined-elements`を追加します。
+
+
