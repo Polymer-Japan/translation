@@ -390,3 +390,60 @@ Warningが会った場合に、次のように表示されます
 この警告を無効にする場合は、`polymer.json`の`ignoreWarnings`配列に、`undefined-elements`を追加します。
 
 
+### polymer serve
+
+> Runs a local web server.
+  
+ローカル環境でウェブサーバーを立ち上げます。
+
+> If you want to view a live demo of your element or app, run the local web server:
+  
+作ったアプリケーションのデモを確認したい場合に、ローカル環境のウェブサーバーで確認します。
+
+```
+polymer serve
+```
+
+> To view the demo, point your browser to one of the following URLs.
+  
+デモを表示するには、ブラウザで次のURLを指定します。
+
+> Element project demo:
+
+エレメントプロジェクトのデモの場合
+
+> Element project API reference:
+
+エレメントプロジェクトのAPIリファレンスの場合
+
+> App project demo:
+
+アプリケーションプロジェクトの場合
+
+
+#### Server options
+
+> This section shows examples of using various polymer serve options.
+  
+ここからは、`polymer serve`のオプションの使用例を見ていきましょう。
+
+##### --port
+
+> Serve from port 3000:
+
+サーバーのポートを3000番に指定した場合。
+
+##### --hostname
+
+> If you have configured a custom hostname on your machine, Polymer CLI can serve it with the --hostname argument (for example, app project demo is available at http://test:8080):
+
+ホスト名を独自に設定している場合は、`--hostname`引数から指定が行えます（例、appプロジェクトのデモでは、`http://test:8080`より利用できます）。
+
+##### --open
+
+> Open up a page other than the default index.html in a specific browser (Apple Safari, in this case):
+
+特定のブラウザ（この場合は、Apple Safari）では、デフォルトページのindex.html以外のページを開きます。
+
+
+
