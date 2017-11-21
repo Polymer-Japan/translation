@@ -445,5 +445,57 @@ polymer serve
 
 特定のブラウザ（この場合は、Apple Safari）では、デフォルトページのindex.html以外のページを開きます。
 
+##### --compile
+
+> By default, the server will automatically use Babel to transpile any ES6 code down to ES5 for browsers that don't have native support for important ES6 features like classes.
+
+通常は、class構文などのES6の機能をサポートしていないブラウザのために、Babelを使用して自動的にES5にトランスパイルしています。
+ 
+> This behavior can be explicitly turned on or off for all browsers via the --compile option.
+  
+この動作は、--compileオプションを使用して、オンまたはオフにすることができます。
+
+> Valid values are "auto", "always" and "never". 
+
+設定値には "auto"、 "always"、 "never"があります。
+
+> "auto" compiles JavaScript to ES5 for browsers that don't fully support ES6.
+
+"auto"は、ES6に対応していないブラウザに対しては、JavaScriptをES5にコンパイルします。
+
+> Always compile ES6 to ES5:
+
+常にES6をES5にコンパイルする場合:
+
+> Never compile ES6 to ES5:
+
+ES6をES5にコンパイルしない場合:
+
+> (Default) Automatically compile to ES5 for browsers that don't fully support ES6:
+  
+（デフォルト）ES6に対応していないブラウザの時に、自動的にコンパイルする場合:
+
+
+
+> Automatic compilation can cause problems when running in device emulation mode on Chrome. 
+
+autoの場合は、Chromeのデバイスエミュレーションモードで実行すると、問題を引き起こす場合があります。
+
+> If the browser sends another browser's user-agent string, the server may switch between compiled and uncompiled responses, leaving the browser with an inconsistent set of resources in its cache.
+ 
+ブラウザが別のブラウザのユーザエージェント文字列を送信すると、サーバはコンパイルされたレスポンスとコンパイルされていないレスポンスを切り替えて、キャッシュ内に一貫性のないリソースセットを残します。
+ 
+> This issue may also occur in other browsers with device emulation capabilities. 
+
+この問題は、デバイスエミュレーション機能を備えた他のブラウザでも発生する可能性があります。
+
+> Use --compile always or --compile never to avoid this problem.
+
+この問題を回避するには、--compile alwaysまたは--compile neverを使用してください。
+
+
+> Run polymer help serve for the full list of available options.
+
+使用可能なオプションについては、`polymer help serve`を実行してください。
 
 
