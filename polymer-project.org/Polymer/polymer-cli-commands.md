@@ -499,3 +499,53 @@ autoの場合は、Chromeのデバイスエミュレーションモードで実�
 使用可能なオプションについては、`polymer help serve`を実行してください。
 
 
+### polymer test
+
+> Runs tests.
+
+テストを実行します
+
+> If you want to run tests on your element or app project, cd to the base directory of your project and run:
+
+エレメントやプロジェクトのテストを実行したい場合は、ルートディレクトリに移動して以下のコマンドを実行してください
+
+```
+polymer test
+```
+
+> Polymer CLI automatically runs all of the tests that it finds in the test directory.
+
+Polymer CLIは、`test`ディレクトリで検出したすべてのテストを自動的に実行します。
+
+> You'll see the results of the tests in your CLI.
+
+テスト結果はCLIに表示されます。
+
+> If you create your own tests, they should also go in the test directory.
+  
+独自のテストを作成する場合は、`test`ディレクトリに移動します。
+
+> The underlying library that powers polymer test is called web-component-tester (wct). 
+
+`polymer test`を実行する基礎となるライブラリは、`web-component-tester（wct）`と呼ばれます。
+
+> Learn more about creating unit tests with wct in Test your elements.
+
+`wct`を使ったユニットテストの作り方については[Test your elements](https://www.polymer-project.org/2.0/docs/tools/tests)をご覧ください
+
+
+### Polymer CLI コマンドのグローバルオプション
+
+> You can see a list of global options by running polymer help. Most of them are self-explanatory.
+
+`polymer help`を実行すると、グローバルオプションのリストが表示されます。
+
+> The following commands are currently only supported for the polymer build command, with planned support for other commands in the future.
+
+次のコマンドは現在、`polymer build`コマンドでのみ使用できます。将来的には、他のコマンドでも使用できる予定になります。
+
+
+> See polymer build for more information on how to use these options.
+
+さらに詳しい情報を見たい方は、(polymer build)[https://www.polymer-project.org/2.0/docs/tools/polymer-cli-commands#build]でのオプションの項目をご覧ください。
+
